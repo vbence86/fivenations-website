@@ -1,0 +1,4 @@
+{
+  "*.js": ["lint"],
+  "*.css": ["stylefmt", "stylelint"]
+}

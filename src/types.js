@@ -1,7 +1,7 @@
 // @flow
 
-import type {RootState as $RootState} from './root/types'
-import type {Selector as ReselectSelector} from 'reselect'
+import type {RootState as $RootState} from './root/types';
+import type {Selector as ReselectSelector} from 'reselect';
 
 export type RootState = $RootState
 

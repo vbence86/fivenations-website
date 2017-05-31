@@ -1,19 +1,10 @@
-@import '../node_modules/normalize.css/normalize.css';
-@import './styles/typography.css';
-
-:global #root {
+.component {
   display: flex;
   flex: 1;
+  background-color: black;
 }
 
-html {
-  height: 100%;
-}
-
-body {
+.routes {
   display: flex;
-  min-height: 100%;
-  margin: 0;
-  padding: 0;
-  font-family: var(--font-serif);
+  flex: 1;
 }

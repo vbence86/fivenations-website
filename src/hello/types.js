@@ -1,6 +1,6 @@
 // @flow
 
-import type {Action} from '../types'
+import type {Action} from '../types';
 
 export type HelloState = {
   message: string,

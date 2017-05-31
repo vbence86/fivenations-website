@@ -5,7 +5,6 @@ import {connect} from 'react-redux';
 import {sayHello} from '../actions';
 import {helloSelector} from '../selectors';
 import css from './Hello.css';
-import RaisedButton from 'material-ui/RaisedButton';
 
 export class Hello extends Component {
 
@@ -22,13 +21,7 @@ export class Hello extends Component {
 
     return (
       <div className={css.component}>
-        <RaisedButton
-          label={message}
-          labelPosition="before"
-          className={css.button}
-          containerElement="label"
-        >
-        </RaisedButton>
+        <h1>{message}</h1>
       </div>
     );
   }

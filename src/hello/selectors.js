@@ -1,14 +1,14 @@
 // @flow
 
-import {createSelector} from 'reselect'
-import type {Selector, RootState} from '../types'
+import {createSelector} from 'reselect';
+import type {Selector, RootState} from '../types';
 
 export const getMessage: Selector<*, *> = (state: RootState) =>
-  state.hello.message
+  state.hello.message;
 
 export const helloSelector = createSelector(
   getMessage,
   (message) => ({
     message,
   })
-)
+);

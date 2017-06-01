@@ -21,12 +21,12 @@ a {
     height: 140px;
     bottom: 0;
     opacity: 0.5;
-    background: 
-    linear-gradient(30deg, $purple 12%, transparent 12.5%, transparent 87%, $purple 87.5%, $purple 0), 
-    linear-gradient(150deg, $purple 12%, transparent 12.5%, transparent 87%, $purple 87.5%, $purple 0), 
-    linear-gradient(30deg, $purple 12%, transparent 12.5%, transparent 87%, $purple 87.5%, $purple 0), 
-    linear-gradient(150deg, $purple 12%, transparent 12.5%, transparent 87%, $purple 87.5%, $purple 0), 
-    linear-gradient(60deg, lighten($purple, 7%) 25%, transparent 25.5%, transparent 75%, lighten($purple, 7%) 75%, lighten($purple, 7%) 0), 
+    background:
+    linear-gradient(30deg, $purple 12%, transparent 12.5%, transparent 87%, $purple 87.5%, $purple 0),
+    linear-gradient(150deg, $purple 12%, transparent 12.5%, transparent 87%, $purple 87.5%, $purple 0),
+    linear-gradient(30deg, $purple 12%, transparent 12.5%, transparent 87%, $purple 87.5%, $purple 0),
+    linear-gradient(150deg, $purple 12%, transparent 12.5%, transparent 87%, $purple 87.5%, $purple 0),
+    linear-gradient(60deg, lighten($purple, 7%) 25%, transparent 25.5%, transparent 75%, lighten($purple, 7%) 75%, lighten($purple, 7%) 0),
     linear-gradient(60deg, lighten($purple, 7%) 25%, transparent 25.5%, transparent 75%, lighten($purple, 7%) 75%, lighten($purple, 7%) 0), $dark-purple;
     background-position: 0 0, 0 0, 40px 70px, 40px 70px, 0 0, 40px 70px;
     background-size: 80px 140px;
@@ -87,24 +87,24 @@ a {
     &.active {
       a {
         background: transparent;
-        color: $white;  
+        color: $white;
       }
     }
   }
 
 }
-hr { 
+hr {
   border : 0;
-  height: 3px; 
+  height: 3px;
   background: $white;
-  width: 30px;    
+  width: 30px;
 }
 .margin-top-100 {
   margin-top: 100px;
 }
 .margin-bottom-135 {
   margin-bottom: 135px;
-} 
+}
 .margin-top-30 {
   margin-top: $font-size-h2;
 }
@@ -153,7 +153,6 @@ hr {
         color: $color-grey;
         border-bottom: 2px solid transparent;
         &:hover {
-          animation: grow .3s ease-in-out;
           border-bottom: 2px solid;
         }
       }
@@ -310,30 +309,30 @@ hr {
       }
 
     input:-moz-placeholder { /* Firefox 18- */
-      color: $pink;  
+      color: $pink;
     }
 
     input::-moz-placeholder {  /* Firefox 19+ */
-      color: $pink;  
+      color: $pink;
     }
 
-    input:-ms-input-placeholder {  
-      color: $pink;  
+    input:-ms-input-placeholder {
+      color: $pink;
     }
     textarea::-webkit-input-placeholder {
       color: $pink;
     }
 
     textarea:-moz-placeholder { /* Firefox 18- */
-      color: $pink;  
+      color: $pink;
     }
 
     textarea::-moz-placeholder {  /* Firefox 19+ */
-      color: $pink;  
+      color: $pink;
     }
 
-    textarea:-ms-input-placeholder {  
-      color: $pink;  
+    textarea:-ms-input-placeholder {
+      color: $pink;
     }
   }
   label {
@@ -448,7 +447,7 @@ figure {
 // .no-touch
 #effect-5 figure:hover img,
 #effect-5 figure.hover img {
-  transform: rotate(-360deg) scale(0);
+  opacity: 0
 }
 /* ------------------------------------------------------------ *\
 |* ------------------------------------------------------------ *|
@@ -541,7 +540,7 @@ figure {
 }
 /* ------------------------------------------------------------ *\
 |* ------------------------------------------------------------ *|
-|* 3D rolling links, idea from http://hakim.se/thoughts/rolling-links 
+|* 3D rolling links, idea from http://hakim.se/thoughts/rolling-links
 |* ------------------------------------------------------------ *|
 \* ------------------------------------------------------------ */
 
@@ -598,12 +597,12 @@ figure {
 
 .csstransforms3d .cl-effect-2 a:hover span::before,
 .csstransforms3d .cl-effect-2 a:focus span::before {
-  background: $color-orange;  
+  background: $color-orange;
 }
 
 /* ------------------------------------------------------------ *\
 |* ------------------------------------------------------------ *|
-|* MEDIA QUERIES 
+|* MEDIA QUERIES
 |* ------------------------------------------------------------ *|
 \* ------------------------------------------------------------ */
 @media(max-width: 840px) {
@@ -612,7 +611,7 @@ figure {
       p{
         font-size: 14px;
       }
-    } 
+    }
   }
   .carousel {
     a {
@@ -659,8 +658,8 @@ figure {
         margin-left: 18px;
         margin-right: 18px;
       }
-    } 
-  } 
+    }
+  }
 }
 #quote-carousel {
   .carousel-indicators {
@@ -681,7 +680,7 @@ figure {
       padding: 5px 10px;
       p {
         font-size: 14px;
-      }      
+      }
     }
   }
 }
@@ -767,13 +766,13 @@ figure {
       text-decoration: none;
     }
   }
-  
+
   &.spin-icon a:hover:after, &.spin-icon a:focus:after {
     transition: transform 0.4s ease-out;
     transform: rotateZ(360deg);
   }
   $networks: linkedin '\f0e1' #0077b5, facebook '\f09a' #3b5998, twitter '\f099' #00b0ed,  instagram '\f16d' #3f729b, pinterest '\f231' #cc2127;
-  
+
   @each $network in $networks {
    .icon-#{nth($network, 1)} {
      &:after {

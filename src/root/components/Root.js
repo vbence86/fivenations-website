@@ -3,19 +3,18 @@
 import React from 'react';
 import {Provider} from 'react-redux';
 import {BrowserRouter as Router, Route} from 'react-router-dom';
-import Hello from '../../hello/components/Hello';
-import css from './Root.css';
+import LandingPage from '../../landingpage/components/LandingPage';
 
 export type RootProps = {
   store: Object,
 }
 
 const Root = ({store}: RootProps) => (
-  <div className={css.component}>
+  <div>
     <Provider store={store}>
       <Router>
-        <div className={css.routes}>
-          <Route exact path="/" component={Hello}/>
+        <div>
+          <Route exact path="/" component={LandingPage}/>
         </div>
       </Router>
     </Provider>

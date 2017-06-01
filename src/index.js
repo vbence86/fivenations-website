@@ -5,7 +5,7 @@ import {render} from 'react-dom';
 import {AppContainer} from 'react-hot-loader';
 import configureStore from './root/configureStore';
 import Root from './root/components/Root';
-import './index.css';
+import './index.scss';
 
 import type {RootProps} from './root/components/Root';
 

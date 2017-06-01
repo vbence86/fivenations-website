@@ -1,4 +1,8 @@
 @import "./set_variables.scss";
-@import "../../../node_modules/bootstrap-sass/assets/stylesheets/_bootstrap.scss";
+
+$icon-font-path: "~bootstrap-sass/assets/fonts/bootstrap/";
+
+@import "../../../node_modules/bootstrap-sass/assets/stylesheets/bootstrap";
 @import "../../../node_modules/spinkit/scss/spinners/3-wave.scss";
-@import "custom.scss";
+
+@import "./custom.scss";

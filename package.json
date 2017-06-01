@@ -29,6 +29,7 @@
     "postcss-cssnext": "^2.10.0",
     "postcss-import": "^9.1.0",
     "postcss-loader": "1.2.2",
+    "postcss-scss": "^1.0.0",
     "postcss-units": "^1.1.0",
     "react": "^15.5.4",
     "react-dev-utils": "^0.5.2",

@@ -1,6 +1,7 @@
 /* globals mixitup, $, window */
 
 import React, {Component} from 'react';
+import ContentProvider from '../../utils/ContentProvider';
 
 export class LandingPage extends Component {
 
@@ -53,13 +54,6 @@ export class LandingPage extends Component {
       }
     });
     // Add header class on scroll End
-    // preloader
-    win.on('load', function() {
-      $('.sk-wave').fadeOut();
-      $('#preloader').delay(350).fadeOut('slow');
-    });
-    // preload end
-
 
   }
 
@@ -71,7 +65,7 @@ export class LandingPage extends Component {
             <div className="overlay" />
             <ul className="nav nav-pills menu-center margin-top-30 scroll-nav">
               <li role="presentation" className="active"><a href="#home"><i className="fa fa-home"></i></a></li>
-              <li role="presentation"><a href="#portfolio">Portfolio</a></li>
+              <li role="presentation"><a href="#portfolio"></a></li>
               <li role="presentation"><a href="#reviews">Reviews</a></li>
               <li role="presentation"><a href="#about_me">About</a></li>
               <li role="presentation"><a href="#expertness">Services</a></li>

@@ -11,6 +11,7 @@
     "babel-preset-react-app": "^2.2.0",
     "babel-runtime": "^6.20.0",
     "bootstrap-sass": "^3.3.7",
+    "contentful": "^4.3.0",
     "css-loader": "0.26.1",
     "dotenv": "^4.0.0",
     "eslint": "3.16.1",

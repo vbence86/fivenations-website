@@ -5,6 +5,7 @@ export default class AboutUs extends Component {
   constructor(props) {
     super(props);
     this.contentProvider = this.props.contentProvider;
+    this.state = this.contentProvider.get('landingPage').aboutUs;  
   }
 
   render() {

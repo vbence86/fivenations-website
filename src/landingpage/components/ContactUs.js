@@ -10,7 +10,7 @@ export default class ContactUs extends Component {
 
   renderContactUsItems() {
     return this.state.contactUsItems.map( (v, i) => (
-      <div className="col-sm-4 col-xs-12">
+      <div className="col-sm-4 col-xs-12" key={i}>
         <div className="block">
           <i className={`fa fa-${v.contactIcon} fa-2x`}></i>
           <h4 className="text-uppercase">{v.title}</h4>

@@ -1,4 +1,6 @@
 import React, {Component} from 'react';
+import {Parallax, Background} from 'react-parallax';
+import {ParallaxScroller, Parallax as ParallaxComponent} from 'react-scroll-parallax';
 
 export default class Header extends Component {
 
@@ -6,6 +8,7 @@ export default class Header extends Component {
     super(props);
     this.contentProvider = this.props.contentProvider;
     this.state = this.contentProvider.get('landingPage');
+    ParallaxScroller.init();
   }
 
   renderMenu() {
@@ -27,14 +30,22 @@ export default class Header extends Component {
 
   render() {
     return (
-        <header className="container-fluid sdm-bg" id="home">
+      <div>
+        <Parallax strength={300} className="container-fluid sdm-bg" id="home">
+          <Background blur={{min:0, max:15}}>
+            <img src="http://www.fillmurray.com/400/300"/>
+          </Background>
           <div className="row">
             <div className="overlay" />
             <ul className="nav nav-pills menu-center margin-top-30 scroll-nav">
               <li role="presentation" className="active"><a href="#home"><i className="fa fa-home">{this.state.pageTitle}</i></a></li>
               {this.renderMenu()}
             </ul>
-            <img src="images/profile.jpg" className="margin-top-76 img-circle center-block profile_picture" alt="profile" />
+            <ParallaxComponent 
+                offsetYMin={-100}
+                offsetYMax={100}>
+              <img src="images/profile.jpg" className="margin-top-76 img-circle center-block profile_picture" alt="profile" />
+            </ParallaxComponent>
             <h1 className="text-capitalize text-center">Jeanetter benson</h1>
             <h3 className="text-capitalize text-center">UX/UI designer</h3>
             <hr/>
@@ -42,7 +53,8 @@ export default class Header extends Component {
               {this.renderSocialIcons()}
             </div>
           </div>
-        </header>
+        </Parallax>
+      </div>
     );
   }
 

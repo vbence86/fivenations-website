@@ -58,7 +58,7 @@ class OpenPoisitionsSection extends Component {
 
   renderOpenPositions() {
     return this.props.content.positions.map( (v, i) => (
-      <div className="block">
+      <div className="block" key={i}>
         <h4>{v.title}</h4>
         <ul className="icon-list">
           <li><i className="fa fa-user-circle"></i> {v.description}</li>

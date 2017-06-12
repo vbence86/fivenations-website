@@ -6,7 +6,6 @@ export default class ContentMenu extends Component {
     super(props);
     this.contentProvider = this.props.contentProvider;
     this.state = this.contentProvider.get('landingPage').imageMenuSection;
-    console.log(this.state);
   }
 
   renderImageMenuItems() {

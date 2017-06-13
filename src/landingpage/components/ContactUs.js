@@ -27,7 +27,7 @@ export default class ContactUs extends Component {
       <li key={i}><a href={v.url} className={`icon-${v.socialProviderId}`}>{v.label}</a></li>
     ));
     return (
-      <ul className="social-networks spin-icon">
+      <ul className="social-networks">
         {icons}
       </ul>
     );

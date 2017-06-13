@@ -22,32 +22,30 @@ export default class Header extends Component {
       <li key={i}><a href={v.url} className={`icon-${v.socialProviderId}`}>{v.label}</a></li>
     ));
     return (
-      <ul className="social-networks spin-icon">
+      <ul className="social-networks">
         {icons}
       </ul>
     );
   }
 
   render() {
+
     return (
       <div>
         <Parallax strength={300} className="container-fluid sdm-bg" id="home">
           <Background blur={{min:0, max:15}}>
-            <img src="http://www.fillmurray.com/400/300"/>
+            <img alt="background" src="/images/background.jpg"/>
           </Background>
           <div className="row">
-            <div className="overlay" />
             <ul className="nav nav-pills menu-center margin-top-30 scroll-nav">
-              <li role="presentation" className="active"><a href="#home"><i className="fa fa-home">{this.state.pageTitle}</i></a></li>
+              <li role="presentation" className="active"><a href="#home"><i className="fa fa-home" />{this.state.pageTitle}</a></li>
               {this.renderMenu()}
             </ul>
-            <ParallaxComponent 
-                offsetYMin={-100}
-                offsetYMax={100}>
-              <img src="images/profile.jpg" className="margin-top-76 img-circle center-block profile_picture" alt="profile" />
-            </ParallaxComponent>
-            <h1 className="text-capitalize text-center">Jeanetter benson</h1>
-            <h3 className="text-capitalize text-center">UX/UI designer</h3>
+            <div id="main-cta-container" className="col-sm-12 text-center">
+              <h2>{this.state.header}</h2>
+              <h4>{this.state.subHeader}</h4>
+              <a id="main-cta" href="#play-fivenations" className="btn btn-orange"><i className="fa fa-play-circle"/> {this.state.ctaButton}</a>
+            </div>
             <hr/>
             <div className="text-center margin-bottom-135">
               {this.renderSocialIcons()}
@@ -56,6 +54,7 @@ export default class Header extends Component {
         </Parallax>
       </div>
     );
+
   }
 
 }

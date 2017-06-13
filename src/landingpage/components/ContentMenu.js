@@ -45,11 +45,10 @@ export default class ContentMenu extends Component {
               <div className="col-sm-12 text-center">
                 <a href="#" className="btn btn-orange">Learn More</a>
               </div>
-
             </div>
           </div>
         </div>
-        </section>
+      </section>
     );
   }
 

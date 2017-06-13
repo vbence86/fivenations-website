@@ -17,7 +17,7 @@ export default class CTABox extends Component {
             <h4><i className="fa fa-thumbs-up fa-2x"></i>{this.state.subtitle}</h4>
 
             <nav className="cl-effect-2">
-              <a href="#contact_me"><span data-hover="{this.state.buttonLabel}">{this.state.buttonLabel}</span></a>
+              <a href="#contact_me"><span data-hover={this.state.buttonLabel}>{this.state.buttonLabel}</span></a>
             </nav>
           </div>
         </div>

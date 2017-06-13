@@ -33,7 +33,7 @@ export default class ContentMenu extends Component {
             <div className="text-center filter-btns">
               <ul className="nav nav-pills">
                 <li role="presentation">
-                  <p className="btn">{this.state.title}</p>
+                  <h3 className="btn">{this.state.title}</h3>
                 </li>
               </ul>
             </div>

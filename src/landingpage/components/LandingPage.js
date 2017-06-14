@@ -12,7 +12,7 @@ export class LandingPage extends Component {
 
   render() {
     return (
-      <Universe>
+      <Universe id="universe">
         <Header contentProvider={ContentProvider} />
         <ContentMenu contentProvider={ContentProvider} />
         <FeatureList contentProvider={ContentProvider} />

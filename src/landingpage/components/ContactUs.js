@@ -31,12 +31,12 @@ export default class ContactUs extends Component {
         {icons}
       </ul>
     );
-  }  
+  }
 
   render() {
     const year = 1900 + (new Date()).getYear();
     return (
-      <section className="container-fluid sdm-bg" id="contact_me">
+      <section className="container-fluid sdm-bg" id="contact-us">
         <div className="row">
           <div className="overlay"></div>
           <div className="col-sm-12 text-center text-capitalize">

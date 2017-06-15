@@ -47,8 +47,8 @@ export default class Header extends Component {
   render() {
 
     return (
-      <div>
-        <Parallax strength={300} className="container-fluid sdm-bg" id="home">
+      <div id="home">
+        <Parallax strength={300} className="container-fluid sdm-bg">
           <Background blur={{min:0, max:15}}>
             <img alt="background" src="/images/background.jpg"/>
           </Background>

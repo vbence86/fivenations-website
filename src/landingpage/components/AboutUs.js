@@ -10,14 +10,14 @@ class AboutUsSection extends Component {
         <div className="block">
           <ReactMarkdown source={this.props.content} />
         </div>
-      </div>      
-    );    
-  }  
+      </div>
+    );
+  }
 
 }
 
 class TeamMembersSection extends Component {
-  
+
   render() {
     return (
       <div className="col-md-3 col-sm-4 col-xs-6">
@@ -52,8 +52,8 @@ class OpenPoisitionsSection extends Component {
       <div className="col-md-4 col-sm-4 col-xs-6">
         <h3><i className="fa fa-graduation-cap"></i>{this.props.content.header}</h3>
         {this.renderOpenPositions()}
-      </div>      
-    );    
+      </div>
+    );
   }
 
   renderOpenPositions() {
@@ -79,7 +79,7 @@ export default class AboutUs extends Component {
 
   render() {
     return (
-      <section className="container" id="about_me">
+      <section className="container" id="about-us">
         <div className="row">
           <div className="col-md-10 col-md-offset-1 col-sm-12">
             <div className="row">
@@ -89,7 +89,7 @@ export default class AboutUs extends Component {
             </div>
           </div>
         </div>
-      </section>    
+      </section>
     );
   }
 }

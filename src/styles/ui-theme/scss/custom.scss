@@ -187,7 +187,7 @@ hr {
     transform: scale(1);
   }
 }
-#about_me {
+#about-us {
   padding-top: 90px;
   padding-bottom: 69px;
   h3 {
@@ -228,7 +228,7 @@ hr {
     margin-right: $font-size-base;
   }
 }
-#expertness {
+#features {
   padding-top: 89px;
   padding-bottom: 74px;
   h3 {
@@ -251,7 +251,7 @@ hr {
     }
   }
 }
-#hire_me {
+#support-us {
   margin-top: 90px;
   margin-bottom: 90px;
   i {
@@ -291,7 +291,7 @@ hr {
   }
 }
 
-#contact_me {
+#contact-us {
   padding-top: 90px;
   padding-bottom: 90px;
   .block {
@@ -687,13 +687,13 @@ figure {
     }
   }
 }
-#about_me p {
+#about-us p {
   font-size: 14px;
 }
 }
 
 @media (max-width: 480px)  {
-  #expertness {
+  #features {
     .col-xs-6 {
       width: 100%;
     }

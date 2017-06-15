@@ -22,7 +22,7 @@ export default class FeatureList extends Component {
 
   render() {
     return (
-      <section className="container-fluid sdm-bg" id="expertness">
+      <section className="container-fluid sdm-bg" id="features">
         <div className="row">
           <div className="overlay"></div>
           <div className="col-sm-12">

@@ -3,7 +3,7 @@ import React, {Component} from 'react';
 
 export default class Universe extends Component {
 
-  componentWillMount() {
+  componentDidMount() {
     // Smooth Scroll Start
     var navInneer = $('.scroll-nav');
     navInneer.singlePageNav({

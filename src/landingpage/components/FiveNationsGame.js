@@ -77,8 +77,17 @@ export default class FiveNationsGame extends Component {
   }
 
   startGame() {
+    this.scrollUp();
     if (!this.app || this.gameHasStarted) return;
     this.app.start();
+    this.gameHasStarted = true;
+  }
+
+  scrollUp() {
+    if ($(window).scrollTop() <= 100) return;
+    $('html, body').animate({
+      scrollTop: $(`#${gameContainerId}`).offset().top,
+    }, 250);
   }
 
   render() {

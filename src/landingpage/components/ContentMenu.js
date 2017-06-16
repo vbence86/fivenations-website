@@ -1,4 +1,5 @@
 import React, {Component} from 'react';
+import GitHubClient from '../../utils/GitHubClient';
 
 export default class ContentMenu extends Component {
 
@@ -6,6 +7,13 @@ export default class ContentMenu extends Component {
     super(props);
     this.contentProvider = this.props.contentProvider;
     this.state = this.contentProvider.get('landingPage').imageMenuSection;
+  }
+
+  componentDidMount() {
+    this.gitHubClient = new GitHubClient();
+    this.gitHubClient.issues().then(issues => {
+      this.setState({issues});
+    });
   }
 
   renderImageMenuItems() {

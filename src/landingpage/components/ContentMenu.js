@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import GitHubClient from '../../utils/GitHubClient';
+import TravisClient from '../../utils/TravisClient';
 
 export default class ContentMenu extends Component {
 
@@ -13,7 +14,15 @@ export default class ContentMenu extends Component {
     this.gitHubClient = new GitHubClient();
     this.gitHubClient.issues().then(issues => {
       this.setState({issues});
+      console.log(issues);
     });
+
+    this.travisClient = new TravisClient();
+    this.travisClient.builds().then(builds => {
+      this.setState({builds});
+      console.log(builds);
+    });
+
   }
 
   renderImageMenuItems() {

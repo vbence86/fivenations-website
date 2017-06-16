@@ -187,7 +187,7 @@ hr {
     transform: scale(1);
   }
 }
-#about_me {
+#about-us {
   padding-top: 90px;
   padding-bottom: 69px;
   h3 {
@@ -228,7 +228,7 @@ hr {
     margin-right: $font-size-base;
   }
 }
-#expertness {
+#features {
   padding-top: 89px;
   padding-bottom: 74px;
   h3 {
@@ -251,7 +251,7 @@ hr {
     }
   }
 }
-#hire_me {
+#support-us {
   margin-top: 90px;
   margin-bottom: 90px;
   i {
@@ -291,7 +291,7 @@ hr {
   }
 }
 
-#contact_me {
+#contact-us {
   padding-top: 90px;
   padding-bottom: 90px;
   .block {
@@ -687,13 +687,13 @@ figure {
     }
   }
 }
-#about_me p {
+#about-us p {
   font-size: 14px;
 }
 }
 
 @media (max-width: 480px)  {
-  #expertness {
+  #features {
     .col-xs-6 {
       width: 100%;
     }
@@ -793,4 +793,48 @@ figure {
 #main-cta-container {
   margin-top: 5em;
   margin-bottom: 5em;
+}
+
+#side-cta {
+  position: fixed;
+  right: -100px;
+  top: 50%;
+  transform: translate(0, -50%) rotateZ(90deg);
+  transition: right 0.2s ease-out;
+  z-index: 99;
+
+  &.open {
+    left: auto;
+    right: -30px;
+  }
+
+}
+
+a[data-action="play-game"] {
+  opacity: 1;
+  transition: opacity 0.5s ease-out;
+
+  body:not(.fivenationsLoaded) & {
+    opacity: 0;
+  }
+}
+
+#fivenations-game {
+
+  height: 0;
+  opacity: 0;
+  transition: all 0.5s ease-in-out;
+
+  &.open {
+    height: 100%;
+    opacity: 1;
+  }
+
+  /**
+   * Phaser adds inline style attributes to alter vital attributes of the canvas hence the important
+   */
+  canvas {
+    margin: auto !important;
+  }
+
 }

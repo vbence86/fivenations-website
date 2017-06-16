@@ -1,10 +1,9 @@
 /* globals $, window */
-
 import React, {Component} from 'react';
 
 export default class Universe extends Component {
 
-  componentWillMount() {
+  componentDidMount() {
     // Smooth Scroll Start
     var navInneer = $('.scroll-nav');
     navInneer.singlePageNav({
@@ -21,23 +20,23 @@ export default class Universe extends Component {
       $(this).addClass('sdm-active');
     });
     // Smooth Scroll End
-    // Add header class on scroll Start
     var win = $(window);
     win.on('scroll',function() {
       var scroll = win.scrollTop();
       if (scroll >= 400) {
         $('.scroll-nav').addClass('scroll-down');
+        $('#side-cta').addClass('open');
       } else {
         $('.scroll-nav').removeClass('scroll-down');
+        $('#side-cta').removeClass('open');
       }
     });
-    // Add header class on scroll End
 
   }
 
   render() {
     return (
-      <div data-spy="scroll" data-target=".navbar" data-offset="50">
+      <div id={this.props.id} data-spy="scroll" data-target=".navbar" data-offset="50">
         {this.props.children}
       </div>
     );

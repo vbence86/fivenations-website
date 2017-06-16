@@ -1,13 +1,23 @@
 import React, {Component} from 'react';
 import {Parallax, Background} from 'react-parallax';
 import {ParallaxScroller, Parallax as ParallaxComponent} from 'react-scroll-parallax';
+import FiveNationsGame from './FiveNationsGame';
 
 export default class Header extends Component {
 
   constructor(props) {
     super(props);
     this.contentProvider = this.props.contentProvider;
-    this.state = this.contentProvider.get('landingPage');
+
+    const content = this.contentProvider.get('landingPage');
+    const isGameOpen = false;
+    this.state = {
+      ...content,
+      isGameOpen,
+    };
+
+    this.onOpenGame = this.onOpenGame.bind(this);
+
     ParallaxScroller.init();
   }
 
@@ -28,11 +38,17 @@ export default class Header extends Component {
     );
   }
 
+  onOpenGame() {
+    this.setState({
+      isGameOpen: true,
+    });
+  }
+
   render() {
 
     return (
-      <div>
-        <Parallax strength={300} className="container-fluid sdm-bg" id="home">
+      <div id="home">
+        <Parallax strength={300} className="container-fluid sdm-bg">
           <Background blur={{min:0, max:15}}>
             <img alt="background" src="/images/background.jpg"/>
           </Background>
@@ -44,14 +60,16 @@ export default class Header extends Component {
             <div id="main-cta-container" className="col-sm-12 text-center">
               <h2>{this.state.header}</h2>
               <h4>{this.state.subHeader}</h4>
-              <a id="main-cta" href="#play-fivenations" className="btn btn-orange"><i className="fa fa-play-circle"/> {this.state.ctaButton}</a>
+              <a onClick={this.onOpenGame} data-action="play-game" href="#play-fivenations" className="btn btn-orange"><i className="fa fa-play-circle"/> {this.state.ctaButton}</a>
             </div>
+            <FiveNationsGame isOpen={this.state.isGameOpen}/>
             <hr/>
             <div className="text-center margin-bottom-135">
               {this.renderSocialIcons()}
             </div>
           </div>
         </Parallax>
+        <a onClick={this.onOpenGame} id="side-cta" data-action="play-game" href="#play-fivenations" className="btn btn-orange"><i className="fa fa-play-circle"/> {this.state.ctaButton}</a>
       </div>
     );
 

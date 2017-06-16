@@ -27,7 +27,7 @@ export default class ContentMenu extends Component {
 
   render() {
     return (
-      <section className="container position-relative" id="portfolio">
+      <section className="container position-relative" id="development">
         <div className="row">
           <div className="col-sm-10 col-sm-offset-1 position-absolute">
             <div className="text-center filter-btns">

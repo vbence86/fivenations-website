@@ -1,6 +1,6 @@
 import Client from './Client';
 
-const token = require('../../secrets.json').gitHubToken;
+const token = process.env.GITHUB_OAUTH_TOKEN;
 const serviceEndpoint = 'https://api.github.com';
 const userName = 'vbence86';
 const repo = 'fivenations';

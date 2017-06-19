@@ -14,11 +14,11 @@ export default class ContactUs extends Component {
         <div className="block">
           <a href={v.contactUrl} target="_blank">
             <i className={`fa fa-${v.contactIcon} fa-2x`}></i>
+            <h4 className="text-uppercase">{v.title}</h4>
+            <ul className="list-unstyled">
+              <li>{v.contactInfo}</li>
+            </ul>
           </a>
-          <h4 className="text-uppercase">{v.title}</h4>
-          <ul className="list-unstyled">
-            <li>{v.contactInfo}</li>
-          </ul>
         </div>
       </div>
     ));
@@ -26,7 +26,7 @@ export default class ContactUs extends Component {
 
   renderSocialIcons() {
     const icons = this.state.socialProviders.map( (v, i) => (
-      <li key={i}><a href={v.url} className={`icon-${v.socialProviderId}`}>{v.label}</a></li>
+      <li key={i}><a href={v.url} target="_blank" className={`icon-${v.socialProviderId}`}>{v.label}</a></li>
     ));
     return (
       <ul className="social-networks">

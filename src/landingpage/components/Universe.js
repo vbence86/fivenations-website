@@ -9,7 +9,7 @@ export default class Universe extends Component {
     navInneer.singlePageNav({
       updateHash: false,
       filter: ':not(.external)',
-      offset: 61,
+      offset: 52,
       speed: 1000,
       currentClass: 'sdm-active',
       easing: 'swing',

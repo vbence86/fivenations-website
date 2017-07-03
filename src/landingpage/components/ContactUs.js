@@ -12,11 +12,13 @@ export default class ContactUs extends Component {
     return this.state.contactUsItems.map( (v, i) => (
       <div className="col-sm-4 col-xs-12" key={i}>
         <div className="block">
-          <i className={`fa fa-${v.contactIcon} fa-2x`}></i>
-          <h4 className="text-uppercase">{v.title}</h4>
-          <ul className="list-unstyled">
-            <li>{v.contactInfo}</li>
-          </ul>
+          <a href={v.contactUrl} target="_blank">
+            <i className={`fa fa-${v.contactIcon} fa-2x`}></i>
+            <h4 className="text-uppercase">{v.title}</h4>
+            <ul className="list-unstyled">
+              <li>{v.contactInfo}</li>
+            </ul>
+          </a>
         </div>
       </div>
     ));
@@ -24,7 +26,7 @@ export default class ContactUs extends Component {
 
   renderSocialIcons() {
     const icons = this.state.socialProviders.map( (v, i) => (
-      <li key={i}><a href={v.url} className={`icon-${v.socialProviderId}`}>{v.label}</a></li>
+      <li key={i}><a href={v.url} target="_blank" className={`icon-${v.socialProviderId}`}>{v.label}</a></li>
     ));
     return (
       <ul className="social-networks">

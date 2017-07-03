@@ -20,18 +20,23 @@ export default class ContentMenu extends Component {
 
   renderImageMenuItems() {
     return this.state.imageMenuItems.map( (v, i) => (
-      <div className="col-md-4 col-sm-6 col-xs-6 mix-target web" key={i}>
-        <a href={v.url} target="_blank">
-          <figure>
-            <img src={v.image.file.url} alt="" />
-            <figcaption>
-              <h3>{v.title}</h3>
-              <hr />
-              <p>{v.subtitle}</p>
-            </figcaption>
-          </figure>
-        </a>
+      <div className="col-md-12 col-sm-12 col-xs-12 mix-target web" key={i}>
+        <div className="col-md-3 col-sm-12 col-xs-12 mix-target web">
+          <a href={v.url} target="_blank">
+            <figure>
+              <img src={v.image.file.url} alt="" />
+              <figcaption>
+                <p>{v.subtitle}</p>
+              </figcaption>
+            </figure>
+          </a>
+        </div>
+        <div className="col-md-9 col-sm-12 col-xs-12 mix-target web">
+          <h3>{v.title}</h3>
+          <p>fjsadkfjdsakfjdlkfasjdkfjdslkfjadskfdjjafkljfdak</p>
+        </div>
       </div>
+
     ));
   }
 

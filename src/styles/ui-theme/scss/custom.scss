@@ -9,6 +9,7 @@ a {
   &:focus {
     outline: none;
   }
+  cursor: pointer;
 }
 .sdm-bg {
   color: $white;

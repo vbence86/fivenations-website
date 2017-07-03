@@ -29,7 +29,7 @@ export default class Header extends Component {
 
   renderSocialIcons() {
     const icons = this.state.socialProviders.map( (v, i) => (
-      <li key={i}><a href={v.url} className={`icon-${v.socialProviderId}`}>{v.label}</a></li>
+      <li key={i}><a href={v.url} target="_blank" className={`icon-${v.socialProviderId}`}>{v.label}</a></li>
     ));
     return (
       <ul className="social-networks">

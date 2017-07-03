@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
+import TravisBuilds from './TravisBuilds';
 import GitHubClient from '../../utils/GitHubClient';
-import TravisClient from '../../utils/TravisClient';
 
 export default class ContentMenu extends Component {
 
@@ -16,13 +16,6 @@ export default class ContentMenu extends Component {
       this.setState({issues});
       console.log(issues);
     });
-
-    this.travisClient = new TravisClient();
-    this.travisClient.builds().then(builds => {
-      this.setState({builds});
-      console.log(builds);
-    });
-
   }
 
   renderImageMenuItems() {
@@ -47,18 +40,8 @@ export default class ContentMenu extends Component {
       <section className="container position-relative" id="development">
         <div className="row">
           <div className="col-sm-10 col-sm-offset-1 position-absolute">
-            <div className="text-center filter-btns">
-              <ul className="nav nav-pills">
-                <li role="presentation">
-                  <h3 className="btn">{this.state.title}</h3>
-                </li>
-              </ul>
-            </div>
-
-            <div className="row" id="mix-wrapper">
-              <div id="effect-5">
-                {this.renderImageMenuItems()}
-              </div>
+            <div className="row">
+              <TravisBuilds />
               <div className="col-sm-12 text-center">
                 <a href="#" className="btn btn-orange">Learn More</a>
               </div>

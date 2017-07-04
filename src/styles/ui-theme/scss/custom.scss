@@ -839,3 +839,83 @@ a[data-action="play-game"] {
   }
 
 }
+
+#travis-container {
+  margin: 20px auto;
+
+  .buildsContainer {
+    margin: 0;
+    padding: 0;
+  }
+
+  .buildItem {
+    margin: 0 auto 20px;
+    border: 1px solid $color-light-grey;
+    border-radius: 0 0 5px 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.25);
+
+    div {
+      margin: 0;
+      padding: 0;
+    }
+
+    & > div {
+      padding: 5px;
+    }
+
+    & > div:last-child {
+      font-size: 0.8em;
+    }
+
+    a {
+      color: $color-light-grey;
+    }
+
+    p {
+      color: $color-default;
+    }
+
+  }
+
+}
+
+#github-issues-container {
+
+  margin: 20px auto;
+
+  .issuesContainer {
+    margin: 0;
+    padding: 0;
+  }
+
+  .issueItem {
+
+    margin: 0 auto;
+
+    div {
+      margin: 0;
+      padding: 0;
+    }
+
+    & > div {
+      padding: 5px;
+    }
+
+    & > div:first-child {
+      background-color: $github_blue;
+    }
+
+    & > div:last-child {
+      font-size: 0.8em;
+    }
+
+    a {
+      color: $color-default;
+    }
+
+    .issueTitle {
+      font-weight: bold;
+    }
+
+  }
+}

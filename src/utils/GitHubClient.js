@@ -6,7 +6,7 @@ const userName = 'vbence86';
 const repo = 'fivenations';
 
 const issuesAPICall = `${serviceEndpoint}/repos/${userName}/${repo}/issues`;
-const milestonesAPICall = `${serviceEndpoint}/milestones/${userName}/${repo}/issues`;
+const milestonesAPICall = `${serviceEndpoint}/repos/${userName}/${repo}/milestones`;
 
 class GitHubClient extends Client {
 

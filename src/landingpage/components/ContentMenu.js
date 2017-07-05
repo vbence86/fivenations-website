@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import TravisBuilds from './TravisBuilds';
 import GitHubIssues from './GitHubIssues';
+import GitHubActivities from './GitHubActivities';
 
 export default class ContentMenu extends Component {
 
@@ -18,6 +19,7 @@ export default class ContentMenu extends Component {
             <div className="row">
               <TravisBuilds />
               <GitHubIssues />
+              <GitHubActivities />
             </div>
           </div>
         </div>

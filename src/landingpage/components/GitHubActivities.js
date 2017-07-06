@@ -37,7 +37,6 @@ export default class GitHubActivities extends Component {
         days[dayIdx].value += 1;
       }
     });
-    console.log(days);
     return days;
   }
 

@@ -29,27 +29,27 @@ export default class TravisBuilds extends Component {
     const buildUrl = `https://travis-ci.org/vbence86/fivenations-website/builds/${build.id}`;
     const commitUrl = `https://github.com/vbence86/fivenations/commit/${build.commit}`;
     return (
-      <a href={buildUrl} target="_blank">
-        <div className="buildItem" key={idx}>
-          <div className={`row bg-${color} text-${color}`} key={idx}>
+      <div className="buildItem" key={idx}>
+        <div className={`row bg-${color} text-${color}`} key={idx}>
+          <a href={buildUrl} target="_blank">
             <div className="col-xs-6 col-md-6">
               <h5><i className={`fa fa-${icon}`}></i> Build #{build.number}</h5>
             </div>
             <div className="col-xs-6 col-md-6">
               <p className="text-right">{build.branch}</p>
             </div>
-          </div>
-          <div className="row">
-            <div className="col-xs-6 col-md-6">
-              <p>{build.message}</p>
-            </div>
-            <div className="col-xs-6 col-md-6">
-              <p className="text-right"><a href={commitUrl} target="_blank">{build.commit.substring(0, 8)} Changeset <i className="fa fa-arrow-right"></i></a></p>
-            </div>
-            <p></p>
-          </div>
+          </a>
         </div>
-      </a>
+        <div className="row">
+          <div className="col-xs-6 col-md-6">
+            <p>{build.message}</p>
+          </div>
+          <div className="col-xs-6 col-md-6">
+            <p className="text-right"><a href={commitUrl} target="_blank">{build.commit.substring(0, 8)} Changeset <i className="fa fa-arrow-right"></i></a></p>
+          </div>
+          <p></p>
+        </div>
+      </div>
     );
   }
 

@@ -12,7 +12,6 @@ export default class GitHubIssues extends Component {
     this.gitHubClient = new GitHubClient();
     this.gitHubClient.issues().then(issues => {
       this.setState({issues});
-      console.log(issues);
     });
   }
 

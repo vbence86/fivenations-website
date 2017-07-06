@@ -1,6 +1,5 @@
 import React, {Component} from 'react';
 import {Parallax, Background} from 'react-parallax';
-import {ParallaxScroller, Parallax as ParallaxComponent} from 'react-scroll-parallax';
 import FiveNationsGame from './FiveNationsGame';
 
 export default class Header extends Component {
@@ -17,8 +16,6 @@ export default class Header extends Component {
     };
 
     this.onOpenGame = this.onOpenGame.bind(this);
-
-    ParallaxScroller.init();
   }
 
   renderMenu() {
@@ -29,7 +26,7 @@ export default class Header extends Component {
 
   renderSocialIcons() {
     const icons = this.state.socialProviders.map( (v, i) => (
-      <li key={i}><a href={v.url} className={`icon-${v.socialProviderId}`}>{v.label}</a></li>
+      <li key={i}><a href={v.url} target="_blank" className={`icon-${v.socialProviderId}`}>{v.label}</a></li>
     ));
     return (
       <ul className="social-networks">

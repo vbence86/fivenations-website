@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 import TravisBuilds from './TravisBuilds';
 import GitHubIssues from './GitHubIssues';
 import GitHubActivities from './GitHubActivities';
+import InstagramPictures from './InstagramPictures';
 
 export default class ContentMenu extends Component {
 
@@ -20,6 +21,7 @@ export default class ContentMenu extends Component {
               <TravisBuilds />
               <GitHubIssues />
               <GitHubActivities />
+              <InstagramPictures />
             </div>
           </div>
         </div>

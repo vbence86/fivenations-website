@@ -23,7 +23,8 @@ function getClientEnvironment(publicUrl) {
       'PUBLIC_URL': publicUrl,
       // GITHUB OAuth token
       'GITHUB_OAUTH_TOKEN': process.env.GITHUB_OAUTH_TOKEN || '',
-
+      // Instagram Access token
+      'INSTAGRAM_OAUTH_TOKEN': process.env.INSTAGRAM_OAUTH_TOKEN || '',
     });
   // Stringify all values so we can feed into Webpack DefinePlugin
   var stringified = {

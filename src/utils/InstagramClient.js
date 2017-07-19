@@ -1,4 +1,4 @@
-import fetchJsonp from 'fetch-jspon';
+import fetchJsonp from 'fetch-jsonp';
 
 const token = process.env.INSTAGRAM_OAUTH_TOKEN;
 const serviceEndpoint = 'https://api.instagram.com/v1/users/self/media';
@@ -16,11 +16,9 @@ class InstagramClient {
   }
 
   recent() {
-    fetchJsonp(recentImagesAPICall)
+    return fetchJsonp(recentImagesAPICall)
       .then(function(response) {
         return response.json();
-      }).then(function(json) {
-        console.log('parsed json', json);
       });    
   }
 

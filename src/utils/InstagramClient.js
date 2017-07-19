@@ -1,23 +1,27 @@
-import Client from './Client';
+import fetchJsonp from 'fetch-jspon';
 
 const token = process.env.INSTAGRAM_OAUTH_TOKEN;
 const serviceEndpoint = 'https://api.instagram.com/v1/users/self/media';
 
 const recentImagesAPICall = `${serviceEndpoint}/recent/?access_token=${token}`;
 
-class InstagramClient extends Client {
+class InstagramClient {
 
   static instance;
 
   constructor() {
-    super();
     if (this.instance) return this.instance;
 
     this.instance = this;
   }
 
   recent() {
-    return this.get(recentImagesAPICall);
+    fetchJsonp(recentImagesAPICall)
+      .then(function(response) {
+        return response.json();
+      }).then(function(json) {
+        console.log('parsed json', json);
+      });    
   }
 
 };

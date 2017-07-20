@@ -16,10 +16,7 @@ class InstagramClient {
   }
 
   recent() {
-    return fetchJsonp(recentImagesAPICall)
-      .then(function(response) {
-        return response.json();
-      });    
+    return fetchJsonp(recentImagesAPICall).then(resp => resp.json());
   }
 
 };

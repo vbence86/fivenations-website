@@ -19,8 +19,10 @@ export default class InstagramPictures extends Component {
   renderImages() {
     if (!this.state.recents) return null;
     return this.state.recents.data.map((v, i) => (
-      <div className="col-xs-6 col-md-6" key={i}>
-        <img alt="instagram" src={v.images.low_resolution.url} width={293} height={293} />
+      <div className="col-xs-5 col-md-5 pin" key={i}>
+        <a href={v.link} target="_blank">
+          <img alt="instagram" src={v.images.low_resolution.url} width={293} height={293} />
+        </a>
         {this.renderFooter(v.caption)}
       </div>
     ));
@@ -31,7 +33,7 @@ export default class InstagramPictures extends Component {
     const captionText = caption.text;
     const captionUrl = caption.from.profile_picture;
     return (
-      <div>
+      <div className="pinFooter">
         <div className="col-xs-3 col-md-3">
           <img src={captionUrl} width={32} height={32} alt="author"/>
         </div>

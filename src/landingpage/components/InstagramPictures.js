@@ -1,18 +1,36 @@
 import React, {Component} from 'react';
+import Lightbox from 'react-image-lightbox';
 import InstagramClient from '../../utils/InstagramClient';
 
 export default class InstagramPictures extends Component {
 
   constructor(props) {
     super(props);
-    this.state = {};
+
+    this.images = [];
+    this.state = {
+      isLightboxOpen: false,
+      photoIndex: 0,
+    };
   }
 
   componentDidMount() {
     this.instagramClient = new InstagramClient();
-    this.instagramClient.recent().then(recents => {
-      console.log(recents);      
-      this.setState({recents});
+    this.instagramClient.recent().then(data => {     
+      this.saveInstagramResponseToState(data);
+      this.setupLightboxImageList(data);
+    });
+  }
+
+  saveInstagramResponseToState(recents) {
+    if (!recents) return;
+    this.setState({recents});
+  }
+
+  setupLightboxImageList(data) {
+    if (!data || !data.data) return;
+    data.data.forEach(v => {
+      this.images.push(v.images.standard_resolution.url);
     });
   }
 
@@ -20,12 +38,17 @@ export default class InstagramPictures extends Component {
     if (!this.state.recents) return null;
     return this.state.recents.data.map((v, i) => (
       <div className="col-xs-5 col-md-5 pin" key={i}>
-        <a href={v.link} target="_blank">
-          <img alt="instagram" src={v.images.low_resolution.url} width={293} height={293} />
-        </a>
+        <img onClick={this.imageOnClick.bind(this, i)} alt="instagram" src={v.images.low_resolution.url} width={293} height={293} />
         {this.renderFooter(v.caption)}
       </div>
     ));
+  }
+
+  imageOnClick(idx) {
+    this.setState({
+      isLightboxOpen: true,
+      photoIndex: idx,
+    });
   }
 
   renderFooter(caption) {
@@ -45,6 +68,11 @@ export default class InstagramPictures extends Component {
   }
 
   render() {
+    const {
+      isLightboxOpen,
+      photoIndex,
+    } = this.state;
+
     return (
       <div id="instagram-container">
         <div className="col-xs-4 col-md-4">
@@ -53,6 +81,21 @@ export default class InstagramPictures extends Component {
         <div className="col-xs-8 col-md-8 instagramContainer">
           {this.renderImages()}
         </div>
+        {isLightboxOpen &&
+        <Lightbox
+            mainSrc={this.images[photoIndex]}
+            nextSrc={this.images[(photoIndex + 1) % this.images.length]}
+            prevSrc={this.images[(photoIndex + this.images.length - 1) % this.images.length]}
+
+            onCloseRequest={() => this.setState({isLightboxOpen: false})}
+            onMovePrevRequest={() => this.setState({
+              photoIndex: (photoIndex + this.images.length - 1) % this.images.length,
+            })}
+            onMoveNextRequest={() => this.setState({
+              photoIndex: (photoIndex + 1) % this.images.length,
+            })}
+          />
+        }      
       </div>
     );
   }

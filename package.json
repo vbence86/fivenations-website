@@ -40,6 +40,7 @@
     "react-dom": "^15.5.4",
     "react-fusioncharts": "^1.0.4",
     "react-hot-loader": "next",
+    "react-image-lightbox": "^4.1.0",
     "react-markdown": "^2.5.0",
     "react-parallax": "^1.4.1",
     "react-redux": "^5.0.4",

@@ -840,6 +840,17 @@ a[data-action="play-game"] {
 
 }
 
+.developmentDetailsContainer {
+  display: inline-block;
+  margin: 0 auto 30px;
+
+  .textContainer {
+    padding: 0;
+    h4 { margin-bottom: 20px; }
+    p { margin-bottom: 60px; }
+  }
+}
+
 #travis-container {
   margin: 20px auto;
 

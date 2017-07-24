@@ -95,13 +95,19 @@ export default class GitHubActivities extends Component {
 
   render() {
     return (
-      <div id="github-activities-container">
+      <div className="developmentDetailsContainer" id="github-activities-container">
         <div className="col-xs-4 col-md-4">
           <img height={175} width={200} src={require('../../../public/images/github.jpg')} alt="github" />
         </div>
-        <div className="col-xs-8 col-md-8 activitiesContainer">
-          {this.renderChart()}
+        <div className="col-xs-8 col-md-8 textContainer">
+          <h2>{this.props.title}</h2>
+          <h4>{this.props.subtitle}</h4>
+          <p>{this.props.text}</p>
         </div>
+        <div className="col-xs-8 col-md-8 row justify-content-end activitiesContainer">
+          {this.renderChart()}
+        </div>        
+
       </div>
     );
   }

@@ -18,10 +18,10 @@ export default class ContentMenu extends Component {
         <div className="row">
           <div className="col-sm-10 col-sm-offset-1 position-absolute">
             <div className="row">
-              <TravisBuilds />
-              <GitHubIssues />
-              <GitHubActivities />
-              <InstagramPictures />
+              <TravisBuilds {...this.state.imageMenuItems[0]}/>
+              <InstagramPictures {...this.state.imageMenuItems[1]}/>              
+              <GitHubIssues {...this.state.imageMenuItems[2]}/>
+              <GitHubActivities {...this.state.imageMenuItems[3]}/>
             </div>
           </div>
         </div>

@@ -37,7 +37,7 @@ export default class InstagramPictures extends Component {
   renderImages() {
     if (!this.state.recents) return null;
     return this.state.recents.data.map((v, i) => (
-      <div className="col-xs-5 col-md-5 pin" key={i}>
+      <div className="col-xs-3 col-md-3 pin" key={i}>
         <img onClick={this.imageOnClick.bind(this, i)} alt="instagram" src={v.images.low_resolution.url} width={293} height={293} />
         {this.renderFooter(v.caption)}
       </div>
@@ -74,9 +74,14 @@ export default class InstagramPictures extends Component {
     } = this.state;
 
     return (
-      <div id="instagram-container">
+      <div className="developmentDetailsContainer" id="instagram-container">
         <div className="col-xs-4 col-md-4">
           <img height={200} width={200} src={require('../../../public/images/instagram.png')} alt="travis" />
+        </div>
+        <div className="col-xs-8 col-md-8 textContainer">
+          <h2>{this.props.title}</h2>
+          <h4>{this.props.subtitle}</h4>
+          <p>{this.props.text}</p>
         </div>
         <div className="col-xs-8 col-md-8 instagramContainer">
           {this.renderImages()}

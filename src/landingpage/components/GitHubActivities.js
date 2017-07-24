@@ -1,8 +1,9 @@
+/* globals TM */
 import React, {Component} from 'react';
 import ReactFC from 'react-fusioncharts';
 import FusionCharts from 'fusioncharts';
 import charts from 'fusioncharts/fusioncharts.charts';
-import TM from 'fusioncharts/themes/fusioncharts.theme.ocean';
+import 'fusioncharts/themes/fusioncharts.theme.ocean';
 import GitHubClient from '../../utils/GitHubClient';
 
 // Load the charts module pass FusionCharts as dependency

@@ -1,5 +1,4 @@
 import React, {Component} from 'react';
-import {Parallax, Background} from 'react-parallax';
 import FiveNationsGame from './FiveNationsGame';
 
 export default class Header extends Component {
@@ -44,28 +43,23 @@ export default class Header extends Component {
   render() {
 
     return (
-      <div id="home">
-        <Parallax strength={300} className="container-fluid sdm-bg">
-          <Background blur={{min:0, max:15}}>
-            <img alt="background" src="/images/background.jpg"/>
-          </Background>
-          <div className="row">
-            <ul className="nav nav-pills menu-center margin-top-30 scroll-nav">
-              <li role="presentation" className="active"><a href="#home"><i className="fa fa-home" />{this.state.pageTitle}</a></li>
-              {this.renderMenu()}
-            </ul>
-            <div id="main-cta-container" className="col-sm-12 text-center">
-              <h2>{this.state.header}</h2>
-              <h4>{this.state.subHeader}</h4>
-              <a onClick={this.onOpenGame} data-action="play-game" href="#play-fivenations" className="btn btn-orange"><i className="fa fa-play-circle"/> {this.state.ctaButton}</a>
-            </div>
-            <FiveNationsGame isOpen={this.state.isGameOpen}/>
-            <hr/>
-            <div className="text-center margin-bottom-135">
-              {this.renderSocialIcons()}
-            </div>
+      <div id="home" className="container-fluid sdm-bg">
+        <div className="row">
+          <ul className="nav nav-pills menu-center margin-top-30 scroll-nav">
+            <li role="presentation" className="active"><a href="#home"><i className="fa fa-home" />{this.state.pageTitle}</a></li>
+            {this.renderMenu()}
+          </ul>
+          <div id="main-cta-container" className="col-sm-12 text-center">
+            <h2>{this.state.header}</h2>
+            <h4>{this.state.subHeader}</h4>
+            <a onClick={this.onOpenGame} data-action="play-game" href="#play-fivenations" className="btn btn-orange"><i className="fa fa-play-circle"/> {this.state.ctaButton}</a>
           </div>
-        </Parallax>
+          <FiveNationsGame isOpen={this.state.isGameOpen}/>
+          <hr/>
+          <div className="text-center margin-bottom-135">
+            {this.renderSocialIcons()}
+          </div>
+        </div>
         <a onClick={this.onOpenGame} id="side-cta" data-action="play-game" href="#play-fivenations" className="btn btn-orange"><i className="fa fa-play-circle"/> {this.state.ctaButton}</a>
       </div>
     );

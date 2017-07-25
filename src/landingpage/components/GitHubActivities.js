@@ -105,7 +105,7 @@ export default class GitHubActivities extends Component {
           <h4>{this.props.subtitle}</h4>
           <p>{this.props.text}</p>
         </div>
-        <div className="col-xs-8 col-md-8 row justify-content-end activitiesContainer">
+        <div className="col-xs-8 col-md-8 pull-right activitiesContainer">
           {this.renderChart()}
         </div>        
 

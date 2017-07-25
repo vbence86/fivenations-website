@@ -83,7 +83,7 @@ export default class InstagramPictures extends Component {
           <h4>{this.props.subtitle}</h4>
           <p>{this.props.text}</p>
         </div>
-        <div className="col-xs-8 col-md-8 instagramContainer">
+        <div className="col-xs-8 col-md-8 pull-right instagramContainer">
           {this.renderImages()}
         </div>
         {isLightboxOpen &&

@@ -76,7 +76,7 @@ export default class GitHubIssues extends Component {
           <h4>{this.props.subtitle}</h4>
           <p>{this.props.text}</p>
         </div>
-        <div className="col-xs-8 col-md-8 row justify-content-end issuesContainer">
+        <div className="col-xs-8 col-md-8 pull-right issuesContainer">
           {this.renderIssues()}
         </div>
       </div>

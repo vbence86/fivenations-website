@@ -1,8 +1,9 @@
+/* globals TM */
 import React, {Component} from 'react';
 import ReactFC from 'react-fusioncharts';
 import FusionCharts from 'fusioncharts';
 import charts from 'fusioncharts/fusioncharts.charts';
-import TM from 'fusioncharts/themes/fusioncharts.theme.ocean';
+import 'fusioncharts/themes/fusioncharts.theme.ocean';
 import GitHubClient from '../../utils/GitHubClient';
 
 // Load the charts module pass FusionCharts as dependency
@@ -95,13 +96,19 @@ export default class GitHubActivities extends Component {
 
   render() {
     return (
-      <div id="github-activities-container">
+      <div className="developmentDetailsContainer" id="github-activities-container">
         <div className="col-xs-4 col-md-4">
           <img height={175} width={200} src={require('../../../public/images/github.jpg')} alt="github" />
         </div>
-        <div className="col-xs-8 col-md-8 activitiesContainer">
-          {this.renderChart()}
+        <div className="col-xs-8 col-md-8 textContainer">
+          <h2>{this.props.title}</h2>
+          <h4>{this.props.subtitle}</h4>
+          <p>{this.props.text}</p>
         </div>
+        <div className="col-xs-8 col-md-8 pull-right activitiesContainer">
+          {this.renderChart()}
+        </div>        
+
       </div>
     );
   }

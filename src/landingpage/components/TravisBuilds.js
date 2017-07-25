@@ -26,7 +26,7 @@ export default class TravisBuilds extends Component {
     const finished = 'finished' === build.state;
     const color = finished ? 'success' : 'danger';
     const icon = finished ? 'check-square' : 'warning';
-    const buildUrl = `https://travis-ci.org/vbence86/fivenations-website/builds/${build.id}`;
+    const buildUrl = `https://travis-ci.org/vbence86/fivenations/builds/${build.id}`;
     const commitUrl = `https://github.com/vbence86/fivenations/commit/${build.commit}`;
     return (
       <div className="buildItem" key={idx}>
@@ -55,13 +55,18 @@ export default class TravisBuilds extends Component {
 
   render() {
     return (
-      <div id="travis-container">
+      <div className="developmentDetailsContainer" id="travis-container">
         <div className="col-xs-4 col-md-4">
           <img height={200} width={200} src={require('../../../public/images/travis-ci.svg')} alt="travis" />
         </div>
-        <div className="col-xs-8 col-md-8 buildsContainer">
-          {this.renderBuilds()}
+        <div className="col-xs-8 col-md-8 textContainer">
+          <h2>{this.props.title}</h2>
+          <h4>{this.props.subtitle}</h4>
+          <p>{this.props.text}</p>
         </div>
+        <div className="col-xs-8 col-md-8 pull-right buildsContainer">
+          {this.renderBuilds()}
+        </div>        
       </div>
     );
   }

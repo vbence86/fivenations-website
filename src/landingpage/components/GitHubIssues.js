@@ -67,11 +67,16 @@ export default class GitHubIssues extends Component {
 
   render() {
     return (
-      <div id="github-issues-container">
+      <div className="developmentDetailsContainer" id="github-issues-container">
         <div className="col-xs-4 col-md-4">
           <img height={175} width={200} src={require('../../../public/images/github.jpg')} alt="github" />
         </div>
-        <div className="col-xs-8 col-md-8 issuesContainer">
+        <div className="col-xs-8 col-md-8 textContainer">
+          <h2>{this.props.title}</h2>
+          <h4>{this.props.subtitle}</h4>
+          <p>{this.props.text}</p>
+        </div>
+        <div className="col-xs-8 col-md-8 pull-right issuesContainer">
           {this.renderIssues()}
         </div>
       </div>

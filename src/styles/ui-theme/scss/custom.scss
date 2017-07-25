@@ -840,6 +840,24 @@ a[data-action="play-game"] {
 
 }
 
+#development {
+  h2 {
+    text-align: center;
+    margin: 40px auto 80px;
+  }
+}
+
+.developmentDetailsContainer {
+  display: inline-block;
+  margin: 0 auto 30px;
+
+  .textContainer {
+    padding: 0;
+    h4 { margin-bottom: 20px; }
+    p { margin-bottom: 60px; }
+  }
+}
+
 #travis-container {
   margin: 20px auto;
 
@@ -918,4 +936,30 @@ a[data-action="play-game"] {
     }
 
   }
+}
+
+#instagram-container {
+
+  .pin {
+    margin: 20px 20px 0 0;
+    padding: 10px;
+    background-color: white;
+    box-shadow: 0 0 100px 1px rgba(0, 0, 0, 0.5);
+    transition: transform 0.5s;
+  }
+
+  .pin:hover {
+    cursor: pointer;
+    transform: scale(1.1);
+  }
+
+  .pinFooter {
+    margin: 10px auto 0;
+  }
+
+  .instagramContainer img {
+    width: 100%;
+    height: auto;
+  }
+
 }

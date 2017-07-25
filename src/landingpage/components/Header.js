@@ -50,7 +50,7 @@ export default class Header extends Component {
             {this.renderMenu()}
           </ul>
           <div id="main-cta-container" className="col-sm-12 text-center">
-            <h2>{this.state.header}</h2>
+            <h1>{this.state.header}</h1>
             <h4>{this.state.subHeader}</h4>
             <a onClick={this.onOpenGame} data-action="play-game" href="#play-fivenations" className="btn btn-orange"><i className="fa fa-play-circle"/> {this.state.ctaButton}</a>
           </div>

@@ -17,6 +17,7 @@ export default class ContentMenu extends Component {
       <section className="container position-relative" id="development">
         <div className="row">
           <div className="col-sm-10 col-sm-offset-1 position-absolute">
+            <h2>{this.state.title}</h2>
             <div className="row">
               <TravisBuilds {...this.state.imageMenuItems[0]}/>
               <InstagramPictures {...this.state.imageMenuItems[1]}/>              

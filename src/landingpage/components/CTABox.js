@@ -1,4 +1,5 @@
 import React, {Component} from 'react';
+import Script from 'react-load-script';
 
 export default class CTABox extends Component {
 
@@ -9,13 +10,16 @@ export default class CTABox extends Component {
   }
 
   renderDonateButton() {
+    const attributes = {
+      'data-donately-id': 'act_98266ac2436c',
+      'data-stripe-publishable-key': 'pk_live_bcmLnFkEbTDuhsJ4p3WEonxp', 
+      'data-donately-amount': '1',
+      'data-donately-presets': '5,10,20,50,100', 
+      'data-donately-currency': 'true', 
+    };
     return (
-      <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
-        <input type="hidden" name="cmd" value="_s-xclick" />
-        <input type="hidden" name="hosted_button_id" value="KN7SL36TVKS9N" />
-        <input type="image" src="https://www.paypalobjects.com/en_US/GB/i/btn/btn_donateCC_LG.gif" name="submit" alt="PayPal – The safer, easier way to pay online!" />
-        <img alt="" src="https://www.paypalobjects.com/en_GB/i/scr/pixel.gif" width="1" height="1" />
-      </form>
+      <Script url="https://cdn.donately.com/dntly-core/1.4/core.min.js" 
+        attributes={attributes}/>
     );
   }
 

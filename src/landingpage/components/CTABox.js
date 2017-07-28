@@ -1,5 +1,7 @@
 import React, {Component} from 'react';
 
+const donatelyURL = 'https://cdn.donately.com/dntly-core/1.4/core.min.js';
+
 export default class CTABox extends Component {
 
   constructor(props) {
@@ -8,15 +10,29 @@ export default class CTABox extends Component {
     this.state = this.contentProvider.get('landingPage').ctaBox;
   }
 
-  renderDonateButton() {
-    return (
-      <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
-        <input type="hidden" name="cmd" value="_s-xclick" />
-        <input type="hidden" name="hosted_button_id" value="KN7SL36TVKS9N" />
-        <input type="image" src="https://www.paypalobjects.com/en_US/GB/i/btn/btn_donateCC_LG.gif" name="submit" alt="PayPal – The safer, easier way to pay online!" />
-        <img alt="" src="https://www.paypalobjects.com/en_GB/i/scr/pixel.gif" width="1" height="1" />
-      </form>
-    );
+  createDonatelyScript() {
+    const attributes = {
+      'data-donately-id': 'act_98266ac2436c',
+      'data-stripe-publishable-key': 'pk_live_bcmLnFkEbTDuhsJ4p3WEonxp', 
+      'data-donately-amount': '1',
+      'data-donately-presets': '5,10,20,50,100', 
+      'data-donately-currency': 'true',
+      src: donatelyURL,
+      async: true,
+      defer: true,
+    };
+    const script = document.createElement('script');
+    Object.keys(attributes).forEach(key => {
+      script.setAttribute(key, attributes[key]);
+    });
+    return script;
+  }
+
+  componentDidMount() {
+    const parent = document.querySelector('#donately-container');
+    if (parent) {
+      parent.appendChild(this.createDonatelyScript());
+    }
   }
 
   render() {
@@ -26,10 +42,20 @@ export default class CTABox extends Component {
           <div className="col-sm-12 text-center">
             <h3>{this.state.header}</h3>
             <h4><i className="fa fa-thumbs-up fa-2x"></i>{this.state.subtitle}</h4>
-
-            <nav className="cl-effect-2">
-              {this.renderDonateButton()}
-            </nav>
+            <button data-toggle="modal" data-target="#donately-modal" className="btn btn-orange">{this.state.buttonLabel}</button>
+            <div className="modal fade" id="donately-modal" tabindex="-1" role="dialog" aria-hidden="true">
+              <div className="modal-dialog" role="document">
+                <div className="modal-content">
+                  <div className="modal-header">
+                    <h5 className="modal-title">{this.state.header}</h5>
+                    <button type="button" className="close" data-dismiss="modal" aria-label="Close">
+                      <span aria-hidden="true">&times;</span>
+                    </button>
+                  </div>
+                  <div className="modal-body" id="donately-container" />
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </section>

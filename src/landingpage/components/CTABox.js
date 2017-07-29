@@ -41,9 +41,9 @@ export default class CTABox extends Component {
         <div className="row">
           <div className="col-sm-12 text-center">
             <h3>{this.state.header}</h3>
-            <h4><i className="fa fa-thumbs-up fa-2x"></i>{this.state.subtitle}</h4>
+            <h4><i className="fa fa-thumbs-up fa-2x"></i> {this.state.subtitle}</h4>
             <button data-toggle="modal" data-target="#donately-modal" className="btn btn-orange">{this.state.buttonLabel}</button>
-            <div className="modal fade" id="donately-modal" tabindex="-1" role="dialog" aria-hidden="true">
+            <div className="modal fade" id="donately-modal" tabIndex="-1" role="dialog" aria-hidden="true">
               <div className="modal-dialog" role="document">
                 <div className="modal-content">
                   <div className="modal-header">

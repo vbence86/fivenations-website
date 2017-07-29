@@ -188,24 +188,6 @@ hr {
     transform: scale(1);
   }
 }
-#about-us {
-  padding-top: 90px;
-  padding-bottom: 69px;
-  h3 {
-    color: $color-orange;
-    text-transform: capitalize;
-    i {
-      margin-right: $font-size-base;
-    }
-  }
-  p {
-    font-size: $font-size-large;
-    font-weight: 300;
-  }
-  a {
-    color: $color-light-grey;
-  }
-}
 .block {
   margin-top: 26px;
   margin-bottom: 26px;
@@ -295,6 +277,8 @@ hr {
 #contact-us {
   padding-top: 90px;
   padding-bottom: 90px;
+  box-shadow: 0 5px 50px rgba(0, 0, 0, 0.25);
+  
   .block {
     h4 {
       color: $white;
@@ -688,9 +672,6 @@ figure {
     }
   }
 }
-#about-us p {
-  font-size: 14px;
-}
 }
 
 @media (max-width: 480px)  {
@@ -966,4 +947,62 @@ a[data-action="play-game"] {
 
 .modal .modal-title {
   display: inline-block;
+}
+
+#about-us {
+
+  /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#fcfff4+0,b3bead+100 */
+background: #fcfff4; /* Old browsers */
+background: -moz-radial-gradient(center, ellipse cover, #fcfff4 0%, #b3bead 100%); /* FF3.6-15 */
+background: -webkit-radial-gradient(center, ellipse cover, #fcfff4 0%,#b3bead 100%); /* Chrome10-25,Safari5.1-6 */
+background: radial-gradient(ellipse at center, #fcfff4 0%,#b3bead 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fcfff4', endColorstr='#b3bead',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+  padding-top: 90px;
+  padding-bottom: 69px;
+  
+  h3 {
+    color: $color-webellion-red;
+    text-transform: capitalize;
+  }
+
+  a {
+    color: $color-webellion-red;
+  }
+
+  p { font-size: 14px; }
+
+  img { height: auto; }
+
+  .aboutUsFooter {
+    img {
+      width: 30%;
+    }
+  }
+
+  .teamMembers {
+
+    left: 50%;
+    transform: translate(-50%);    
+    margin: 40px auto;
+
+    .teamMember {
+      img {
+        width: 100%;
+        max-width: 150px;
+        margin-bottom: 20px;
+        border-radius: 50%;
+        border: 2px solid white;
+        box-shadow: 0 10px 30px 1px rgba(0, 0, 0, 0.25);
+      }
+
+      &:last-child {
+        float: right;
+        margin-left: 20px;
+      }
+
+    }
+
+
+  }
+
 }

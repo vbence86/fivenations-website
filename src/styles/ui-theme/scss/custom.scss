@@ -16,62 +16,7 @@ a {
   background: $purple;
   // @include gradient-horizontal($gradient_color_2, $gradient_color_1, 0%, 100%);
   position: relative;
-  .overlay{
-    position: absolute;
-    width: 100%;
-    height: 140px;
-    bottom: 0;
-    opacity: 0.5;
-    background:
-    linear-gradient(30deg, $purple 12%, transparent 12.5%, transparent 87%, $purple 87.5%, $purple 0),
-    linear-gradient(150deg, $purple 12%, transparent 12.5%, transparent 87%, $purple 87.5%, $purple 0),
-    linear-gradient(30deg, $purple 12%, transparent 12.5%, transparent 87%, $purple 87.5%, $purple 0),
-    linear-gradient(150deg, $purple 12%, transparent 12.5%, transparent 87%, $purple 87.5%, $purple 0),
-    linear-gradient(60deg, lighten($purple, 7%) 25%, transparent 25.5%, transparent 75%, lighten($purple, 7%) 75%, lighten($purple, 7%) 0),
-    linear-gradient(60deg, lighten($purple, 7%) 25%, transparent 25.5%, transparent 75%, lighten($purple, 7%) 75%, lighten($purple, 7%) 0), $dark-purple;
-    background-position: 0 0, 0 0, 40px 70px, 40px 70px, 0 0, 40px 70px;
-    background-size: 80px 140px;
-  }
-
-  .profile_picture {
-    width: 145px;
-    height: 145px;
-  }
-  ul {
-    &.menu-center {
-      display: flex;
-      flex-direction: row;
-      justify-content: center;
-      flex-wrap: wrap;
-      li {
-        a {
-          padding-top: 0;
-          font-size: $font-size-base;
-          font-family: $font-open;
-          font-weight: 700;
-          text-transform: uppercase;
-          display: inline-block;
-          position: relative;
-          &:after {
-            content: '';
-            display: block;
-            margin: 10px auto auto auto;
-            height: 3px;
-            width: 0px;
-            background: transparent;
-            transition: width .5s ease, background-color .5s ease;
-          }
-          &:hover {
-            &:after {
-              width: 100%;
-              background: $white;
-            }
-          }
-        }
-
-      }
-    }
-  }
+  
 }
 
 .scroll-nav {
@@ -272,6 +217,45 @@ hr {
     background: $white;
     color: $color-orange;
   }
+}
+
+
+#home {
+  ul {
+    &.menu-center {
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      flex-wrap: wrap;
+      li {
+        a {
+          padding-top: 0;
+          font-size: $font-size-base;
+          font-family: $font-open;
+          font-weight: 700;
+          text-transform: uppercase;
+          display: inline-block;
+          position: relative;
+          &:after {
+            content: '';
+            display: block;
+            margin: 10px auto auto auto;
+            height: 3px;
+            width: 0px;
+            background: transparent;
+            transition: width .5s ease, background-color .5s ease;
+          }
+          &:hover {
+            &:after {
+              width: 100%;
+              background: $white;
+            }
+          }
+        }
+
+      }
+    }
+  }  
 }
 
 #contact-us {
@@ -808,6 +792,7 @@ a[data-action="play-game"] {
   transition: all 0.5s ease-in-out;
 
   &.open {
+    position: relative;
     height: 100%;
     opacity: 1;
   }

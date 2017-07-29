@@ -1,4 +1,4 @@
-/* globals $, window */
+/* globals $, jQuery, window */
 import React, {Component} from 'react';
 
 const gameContainerId = 'fivenations-game';
@@ -85,8 +85,8 @@ export default class FiveNationsGame extends Component {
 
   scrollUp() {
     if ($(window).scrollTop() <= 100) return;
-    $('html, body').animate({
-      scrollTop: $(`#${gameContainerId}`).offset().top,
+    jQuery('html, body').animate({
+      scrollTop: $(`#${gameContainerId}`).offset().top + 300,
     }, 250);
   }
 

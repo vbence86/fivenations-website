@@ -1,4 +1,4 @@
-/* globals $, window */
+/* globals $, jQuery, window */
 import React, {Component} from 'react';
 
 const gameContainerId = 'fivenations-game';
@@ -38,8 +38,8 @@ export default class FiveNationsGame extends Component {
       .add('default', game => {
 
         game.map.new({
-          width: 32,
-          height: 32,
+          width: 128,
+          height: 128,
         });
 
         game.eventEmitter.synced.players.add({
@@ -52,21 +52,24 @@ export default class FiveNationsGame extends Component {
           team: 2,
         });
 
-        for (var i = 3; i >= 0; i -= 1) {
+        for (var i = 100; i >= 0; i -= 1) {
+          var id = [
+            'hurricane',
+            'orca',
+            'halestrom',
+            'invader',
+            'intruder',
+            'gathering',
+            'crow',
+            'avenger',
+            'devastator',
+            'gloom',
+          ][i % 10];
           game.eventEmitter.synced.entities.add({
-            id: 'hurricane',
-            team: 1,
-            x: 500 + Math.random() * 1000,
-            y: 450 + Math.random() * 1000,
-          });
-        }
-
-        for (var j = 0; j >= 0; j -= 1) {
-          game.eventEmitter.synced.entities.add({
-            id: 'stgeorge',
-            team: 1,
-            x: 200 + Math.random() * 1000,
-            y: 450 + Math.random() * 1000,
+            id: id,
+            team: Math.random() > 0.5 ? 1 : 2,
+            x: 0 + Math.random() * 6000,
+            y: 0 + Math.random() * 6000,
           });
         }
 
@@ -81,12 +84,14 @@ export default class FiveNationsGame extends Component {
     if (!this.app || this.gameHasStarted) return;
     this.app.start();
     this.gameHasStarted = true;
+    $(document.body).addClass('fivenationsStarted');
+    $('video').get(0).parentNode.removeChild($('video').get(0));
   }
 
   scrollUp() {
     if ($(window).scrollTop() <= 100) return;
-    $('html, body').animate({
-      scrollTop: $(`#${gameContainerId}`).offset().top,
+    jQuery('html, body').animate({
+      scrollTop: $(`#${gameContainerId}`).offset().top + 300,
     }, 250);
   }
 

@@ -28,6 +28,7 @@
     "fusioncharts": "^3.12.1",
     "html-webpack-plugin": "2.24.0",
     "json-loader": "0.5.4",
+    "node-http-server": "^7.1.0",
     "node-sass": "^4.5.3",
     "normalize.css": "^6.0.0",
     "postcss-cssnext": "^2.10.0",
@@ -94,7 +95,8 @@
     "stylelint": "stylelint 'src/**/*.css'",
     "start": "node scripts/start.js",
     "build": "node scripts/build.js",
-    "test": "node scripts/test.js --env=jsdom"
+    "test": "node scripts/test.js --env=jsdom",
+    "deploy": "node-http-server root=build/ port=3000"
   },
   "jest": {
     "collectCoverageFrom": [

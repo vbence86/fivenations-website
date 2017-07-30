@@ -4015,12 +4015,6 @@ lodash.cond@^4.3.0:
   version "4.5.2"
   resolved "https://registry.yarnpkg.com/lodash.cond/-/lodash.cond-4.5.2.tgz#f471a1da486be60f6ab955d17115523dd1d255d5"
 
-lodash.debounce@^3.0.0:
-  version "3.1.1"
-  resolved "https://registry.yarnpkg.com/lodash.debounce/-/lodash.debounce-3.1.1.tgz#812211c378a94cc29d5aa4e3346cf0bfce3a7df5"
-  dependencies:
-    lodash._getnative "^3.0.0"
-
 lodash.isarguments@^3.0.0:
   version "3.1.0"
   resolved "https://registry.yarnpkg.com/lodash.isarguments/-/lodash.isarguments-3.1.0.tgz#2f573d85c6a24289ff00663b491c1d338ff3458a"
@@ -4069,12 +4063,6 @@ lodash.templatesettings@^4.0.0:
   resolved "https://registry.yarnpkg.com/lodash.templatesettings/-/lodash.templatesettings-4.1.0.tgz#2b4d4e95ba440d915ff08bc899e4553666713316"
   dependencies:
     lodash._reinterpolate "~3.0.0"
-
-lodash.throttle@^3.0.4:
-  version "3.0.4"
-  resolved "https://registry.yarnpkg.com/lodash.throttle/-/lodash.throttle-3.0.4.tgz#bc4f471fb328e4d6fdc6df2b3d3caf113f0f89c9"
-  dependencies:
-    lodash.debounce "^3.0.0"
 
 lodash.uniq@^4.5.0:
   version "4.5.0"
@@ -4391,6 +4379,10 @@ node-gyp@^3.3.1:
     semver "~5.3.0"
     tar "^2.0.0"
     which "1"
+
+node-http-server@^7.1.0:
+  version "7.1.0"
+  resolved "https://registry.yarnpkg.com/node-http-server/-/node-http-server-7.1.0.tgz#7f666e9933d02d9562524b8e09f01b952e853380"
 
 node-int64@^0.4.0:
   version "0.4.0"
@@ -5651,11 +5643,9 @@ react-hot-loader@next:
     redbox-react "^1.2.5"
     source-map "^0.4.4"
 
-react-html5video@1.4.0:
-  version "1.4.0"
-  resolved "https://registry.yarnpkg.com/react-html5video/-/react-html5video-1.4.0.tgz#3a177bb19a15786c1072fd410891d497cae6992e"
-  dependencies:
-    lodash.throttle "^3.0.4"
+react-html5video@^2.3.0:
+  version "2.3.0"
+  resolved "https://registry.yarnpkg.com/react-html5video/-/react-html5video-2.3.0.tgz#e7de4d40aa1b1b0300b9f79c63b14566796da736"
 
 react-image-lightbox@^4.1.0:
   version "4.1.0"

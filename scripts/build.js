@@ -2,7 +2,7 @@
 
 // Do this as the first thing so that any code reading it knows the right env.
 process.env.NODE_ENV = 'production';
-process.env.PUBLIC_URL = 'http://fivenations.webellionlimited.com/';
+process.env.PUBLIC_URL = process.env.FIVENATIONS_PUBLIC_URL || 'http://localhost:3000';
 
 // Load environment variables from .env file. Suppress warnings using silent
 // if this file is missing. dotenv will never modify any environment variables

@@ -990,3 +990,10 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fcfff4', end
   }
 
 }
+
+#features {
+  .FeatureItem img {
+    width: 100%;
+    height: auto;
+  }
+}

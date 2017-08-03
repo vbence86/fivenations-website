@@ -63,7 +63,7 @@ export default class AboutUs extends Component {
 
   render() {
     return (
-      <section className="container-fluid" id="about-us">
+      <section className="container-fluid bg-light" id="about-us">
         <div className="row">
           <div className="col-md-10 col-md-offset-1 col-sm-12">
             <AboutUsSection header={this.state.aboutUsHeader} content={this.state.aboutUsContent} />

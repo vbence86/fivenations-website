@@ -22,7 +22,7 @@ export default class ContactUs extends Component {
   render() {
     const year = 1900 + (new Date()).getYear();
     return (
-      <section className="container-fluid sdm-bg" id="contact-us">
+      <section className="container-fluid sdm-bg bg-dark" id="contact-us">
         <div className="row">
           <div className="overlay"></div>
           <div className="col-sm-12 text-center text-capitalize">

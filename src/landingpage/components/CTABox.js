@@ -37,7 +37,7 @@ export default class CTABox extends Component {
 
   render() {
     return (
-      <section className="container" id="support-us">
+      <section className="container-fluid bg-light" id="support-us">
         <div className="row">
           <div className="col-sm-12 text-center">
             <h3>{this.state.header}</h3>

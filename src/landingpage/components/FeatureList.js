@@ -9,25 +9,59 @@ export default class FeatureList extends Component {
     console.log(this.state);
   }
 
-  renderFeatureSections() {
-    return this.state.featureItems.map( (v, i) => (
-      <div className="container-fluid FeatureItem" key={i}>
-        <div className="col-sm-5 col-xs-5 col-md-5">
-          <img src={v.image.file.url} alt="animation" />
-        </div>
-        <div className="col-sm-7 col-xs-7 col-md-7">
-          <h4 className="text-uppercase">{v.header}</h4>
-          <p>{v.description}</p>
+  renderHeader() {
+    return (
+      <div className="container-fluid headerContainer bg-light">
+        <div className="col-sm-12 col-xs-12 col-md-12 text-center">
+          <h3>{this.state.header}</h3>
         </div>
       </div>
-    ));
+    );
+  }
+
+  renderFeatureSections() {
+    return this.state.featureItems.map( (v, i) => {
+      const blocks = [
+        this.renderImageContainer(v.image.file.url),
+        this.renderTextContainer(v),
+      ];
+      if (i % 2 === 0) blocks.reverse();
+      return (
+        <div className="container-fluid FeatureItem" key={i}>
+          {blocks}
+        </div>
+      );
+      
+    });
+  }
+
+  renderImageContainer(url) {
+    return (
+      <div className="col-sm-6 col-xs-6 col-md-6">
+        <div className="imageContainer">
+          <img src={url} alt="animation" />
+        </div>
+      </div>
+    );
+  }
+
+  renderTextContainer({header, description}) {
+    return (
+      <div className="col-sm-6 col-xs-6 col-md-6 textContainer">
+        <h3 className="text-uppercase">{header}</h3>
+        <p>{description}</p>
+      </div>
+    );    
   }
 
   render() {
     if (!this.state.featureItems || !this.state.featureItems.length) return null;
     return (
       <section id="features">
-        {this.renderFeatureSections()}
+        {this.renderHeader()}
+        <div className="bg-dark">
+          {this.renderFeatureSections()}
+        </div>
       </section>
     );
   }

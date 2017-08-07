@@ -871,6 +871,11 @@ a[data-action="play-game"] {
     padding: 0;
   }
 
+  a { 
+    color: $color-grey; 
+    font-weight: bold; 
+  }
+
   .issueItem {
 
     margin: 0 auto;

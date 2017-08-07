@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import GitHubClient from '../../utils/GitHubClient';
+import ReactMarkdown from 'react-markdown';
 
 export default class GitHubIssues extends Component {
 
@@ -74,7 +75,9 @@ export default class GitHubIssues extends Component {
         <div className="col-xs-8 col-md-8 textContainer">
           <h2 className="viewport-animation">{this.props.title}</h2>
           <h4 className="viewport-animation">{this.props.subtitle}</h4>
-          <p className="viewport-animation">{this.props.text}</p>
+          <p className="viewport-animation">
+            <ReactMarkdown source={this.props.text} />
+          </p>
         </div>
         <div className="viewport-animation col-xs-8 col-md-8 pull-right issuesContainer">
           {this.renderIssues()}

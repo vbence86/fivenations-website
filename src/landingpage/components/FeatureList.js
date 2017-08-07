@@ -23,7 +23,7 @@ export default class FeatureList extends Component {
     return this.state.featureItems.map( (v, i) => {
       const blocks = [
         this.renderImageContainer(v.image.file.url),
-        this.renderTextContainer(v),
+        this.renderTextContainer({url: v.image.file.url, ...v}),
       ];
       if (i % 2 === 0) blocks.reverse();
       return (
@@ -39,17 +39,30 @@ export default class FeatureList extends Component {
     return (
       <div className="col-sm-6 col-xs-6 col-md-6">
         <div className="imageContainer">
-          <img src={url} alt="animation" />
+          <img className="zoomAnimation" src={url} alt="animation" />
         </div>
       </div>
     );
   }
 
-  renderTextContainer({header, description}) {
+  renderTextContainer({header, description, url, ctaAction, ctaLabel}) {
     return (
-      <div className="col-sm-6 col-xs-6 col-md-6 textContainer">
-        <h3 className="text-uppercase">{header}</h3>
-        <p>{description}</p>
+      <div className="col-sm-6 col-xs-6 col-md-6">
+        <div className="imageContainer">
+          <img className="backgroundImage" src={url} alt="animation" />
+          <div className="textContainer">
+            <h3 className="text-uppercase">{header}</h3>
+            <p>{description}</p>
+            {(() => {
+              if (!ctaLabel) return null;
+              return (
+                <p>
+                  <a data-action={ctaAction} className="btn btn-orange"><i className="fa fa-play-circle"/> {ctaLabel}</a>
+                </p>
+              );
+            })()}
+          </div>
+        </div>
       </div>
     );    
   }

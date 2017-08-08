@@ -1101,3 +1101,7 @@ a[data-action="play-game"] {
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#375666', endColorstr='#0e0533',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
 
 }
+
+.viewport-animation:not(.in-viewport) {
+  animation-play-state: paused;
+}

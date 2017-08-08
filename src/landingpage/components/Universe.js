@@ -36,8 +36,10 @@ export default class Universe extends Component {
     const viewportSelector = '.viewport-animation';
     const viewportClassName = 'in-viewport';
     $(viewportSelector).inViewport(function(px) {
-      if (px > 0 && !this.classList.contains(viewportClassName)) {
-        this.classList.add(viewportClassName);
+      if (px > 0 ) {
+        if (!this.classList.contains(viewportClassName)) {
+          this.classList.add(viewportClassName);
+        }
       } else {
         this.classList.remove(viewportClassName);
       }

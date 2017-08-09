@@ -60,13 +60,13 @@ export default class Header extends Component {
               {this.renderMenu()}
             </ul>
             <div id="main-cta-container" className="col-sm-12 text-center">
-              <h1>{this.state.header}</h1>
-              <h4>{this.state.subHeader}</h4>
+              <h1 className="animated fadeInUp">{this.state.header}</h1>
+              <h4 className="animated fadeInUp delay-250">{this.state.subHeader}</h4>
               <a onClick={this.onOpenGame} data-action="play-game" href="#play-fivenations" className="btn btn-orange"><i className="fa fa-play-circle"/> {this.state.ctaButton}</a>
             </div>
             <FiveNationsGame isOpen={this.state.isGameOpen}/>
             <hr/>
-            <div className="text-center margin-bottom-135">
+            <div className="text-center margin-bottom-135 animated bounceInUp delay-500">
               {this.renderSocialIcons()}
             </div>
           </div>

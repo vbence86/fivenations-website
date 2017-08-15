@@ -757,8 +757,25 @@ figure {
 }
 
 #main-cta-container {
-  margin-top: 5em;
-  margin-bottom: 5em;
+  margin-top: 10em;
+  margin-bottom: 10em;
+
+  h1 {
+    font-size: 80px;
+    margin-bottom: 20px;
+  }
+
+  h4 {
+    font-size: 25px;
+    font-weight: normal;
+  }
+
+  a {
+    margin-top: 100px;
+    padding: 25px 80px;
+    font-size: 25px;
+  }
+
 }
 
 #side-cta {
@@ -778,7 +795,7 @@ figure {
 
 a[data-action="play-game"] {
   opacity: 1;
-  transition: opacity 0.5s ease-out;
+  transition: all 0.5s ease-out;
 
   body:not(.fivenationsLoaded) & {
     opacity: 0;

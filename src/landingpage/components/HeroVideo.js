@@ -13,8 +13,7 @@ export default class HeroVideo extends Component {
 		    <Video autoPlay loop muted poster={ this.props.poster }>
           <source src={ this.props.source.url } type={ this.props.source.type } />
           <h1>Optional HTML and components can be added also</h1>
-        </Video>
-        <div className="backdrop" />  
+        </Video> 
         <div className="container-fluid">
           { this.props.children }
         </div>

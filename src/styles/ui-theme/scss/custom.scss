@@ -778,6 +778,23 @@ figure {
 
 }
 
+#secondary-cta-container {
+
+  width: 50%;
+  margin: 500px auto;
+
+  h2 {
+    font-size: 50px;
+    margin: 30px auto;
+  }
+
+  h4 {
+    font-size: 25px;
+    font-weight: normal;
+  }
+
+}
+
 #side-cta {
   position: fixed;
   right: -100px;

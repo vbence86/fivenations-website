@@ -24,10 +24,8 @@ export default class Universe extends Component {
     win.on('scroll',function() {
       var scroll = win.scrollTop();
       if (scroll >= 400) {
-        $('.scroll-nav').addClass('scroll-down');
         $('#side-cta').addClass('open');
       } else {
-        $('.scroll-nav').removeClass('scroll-down');
         $('#side-cta').removeClass('open');
       }
     });

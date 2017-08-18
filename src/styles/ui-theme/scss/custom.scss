@@ -229,9 +229,9 @@ hr {
       li {
         a {
           padding-top: 0;
-          font-size: $font-size-base;
+          font-size: 12px;
           font-family: $font-open;
-          font-weight: 700;
+          font-weight: normal;
           text-transform: uppercase;
           display: inline-block;
           position: relative;
@@ -781,14 +781,15 @@ figure {
 #secondary-cta-container {
 
   width: 50%;
-  margin: 500px auto;
+  margin: 500px 25%;
 
   h2 {
     font-size: 50px;
-    margin: 30px auto;
+    margin: 15px auto;
   }
 
   h4 {
+    margin: 30px auto;    
     font-size: 25px;
     font-weight: normal;
   }
@@ -1037,10 +1038,18 @@ a[data-action="play-game"] {
 
   .headerContainer {
     position: relative;
-    padding-top: 30px;
-    padding-bottom: 30px;
+    padding: 75px 0;
     box-shadow: 0 50px 50px rgba(0, 0, 0, 0.5);
     z-index: 1;
+
+    .headerIcon {
+      padding: 10px;      
+      background-color: $color-webellion-red;
+      color: white;
+      font-size: 25px;
+      border-radius: 50%;
+    }
+
   }
 
   .FeatureItem {
@@ -1115,14 +1124,7 @@ a[data-action="play-game"] {
 
 
 .bg-light {
-
-  /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#fcfff4+0,b3bead+100 */
-  background: #fcfff4; /* Old browsers */
-  background: -moz-radial-gradient(center, ellipse cover, #fcfff4 0%, #b3bead 100%); /* FF3.6-15 */
-  background: -webkit-radial-gradient(center, ellipse cover, #fcfff4 0%,#b3bead 100%); /* Chrome10-25,Safari5.1-6 */
-  background: radial-gradient(ellipse at center, #fcfff4 0%,#b3bead 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fcfff4', endColorstr='#b3bead',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
-
+  background-color: white;
 }
 
 .bg-dark {

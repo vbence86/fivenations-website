@@ -75,9 +75,7 @@ export default class GitHubIssues extends Component {
         <div className="col-xs-8 col-md-8 textContainer">
           <h2 className="viewport-animation">{this.props.title}</h2>
           <h4 className="viewport-animation">{this.props.subtitle}</h4>
-          <p className="viewport-animation">
-            <ReactMarkdown source={this.props.text} />
-          </p>
+          <ReactMarkdown source={this.props.text} />
         </div>
         <div className="col-xs-8 col-md-8 pull-right issuesContainer">
           {this.renderIssues()}

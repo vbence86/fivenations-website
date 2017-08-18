@@ -23,8 +23,8 @@ export default class FeatureList extends Component {
   renderFeatureSections() {
     return this.state.featureItems.map( (v, i) => {
       const blocks = [
-        this.renderImageContainer(v.image.file.url),
-        this.renderTextContainer({url: v.image.file.url, ...v}),
+        this.renderImageContainer({idx: i, url: v.image.file.url}),
+        this.renderTextContainer({idx: i, url: v.image.file.url, ...v}),
       ];
       if (i % 2 === 0) blocks.reverse();
       return (
@@ -36,7 +36,7 @@ export default class FeatureList extends Component {
     });
   }
 
-  renderImageContainer(url) {
+  renderImageContainer({url}) {
     return (
       <div className="col-sm-6 col-xs-6 col-md-6">
         <div className="imageContainer">

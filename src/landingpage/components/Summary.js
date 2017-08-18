@@ -10,7 +10,7 @@ export default class Summary extends Component {
     this.state = {};    
   }
 
-  componentDidUpdate(prevProps, prevState) {
+  componentDidUpdate() {
     this.gitHubClient.issues().then(issues => {
       this.setState({
         issuesNumber: issues.length,

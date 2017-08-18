@@ -756,6 +756,15 @@ figure {
 }
 }
 
+
+.headerIcon {
+  padding: 10px;      
+  background-color: $color-webellion-red;
+  color: white;
+  font-size: 25px;
+  border-radius: 50%;
+}
+
 #main-cta-container {
   margin-top: 10em;
   margin-bottom: 10em;
@@ -842,9 +851,47 @@ a[data-action="play-game"] {
 }
 
 #development {
-  h2 {
-    margin: 40px auto 80px;
+
+  &.container-fluid {
+    padding: 0;
   }
+
+  .container-fluid {
+    padding: 0;
+  }
+
+
+  .headerContainer {
+
+    width: 70%;
+    max-width: 800px;
+    margin: 15%;
+    float: none;
+    
+    h2 {
+      font-size: 60px;
+      font-weight: 800;
+      color: black;
+    }
+
+    h4 {
+      margin: 0 auto 40px;
+      font-size: 60px;
+      font-weight: normal;      
+    }
+
+    p {
+      font-size: 16px;
+    }
+
+  }
+
+  .developmentContainer {
+    h2 {
+      margin: 40px auto 80px;
+    }
+  }
+
 }
 
 .developmentDetailsContainer {
@@ -1042,14 +1089,6 @@ a[data-action="play-game"] {
     box-shadow: 0 50px 50px rgba(0, 0, 0, 0.5);
     z-index: 1;
 
-    .headerIcon {
-      padding: 10px;      
-      background-color: $color-webellion-red;
-      color: white;
-      font-size: 25px;
-      border-radius: 50%;
-    }
-
   }
 
   .FeatureItem {
@@ -1119,6 +1158,28 @@ a[data-action="play-game"] {
 
   }
 
+
+}
+
+#development-summary {
+
+  background-color: $dark-purple;
+
+  .figures-block {
+
+    padding: 80px 0;
+    border-right: 1px solid rgba(108, 113, 118, .5);
+    color: rgb(108, 113, 118);
+    font-size: 16px;
+    text-transform: uppercase;
+    text-align: center;
+
+    p span {
+      font-size: 32px;
+      color: white;
+    }
+
+  }  
 
 }
 

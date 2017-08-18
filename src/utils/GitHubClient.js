@@ -8,6 +8,7 @@ const repo = 'fivenations';
 const issuesAPICall = `${serviceEndpoint}/repos/${userName}/${repo}/issues`;
 const milestonesAPICall = `${serviceEndpoint}/repos/${userName}/${repo}/milestones`;
 const activitiesAPICall = `${serviceEndpoint}/repos/${userName}/${repo}/events`;
+const commitsAPICall = `${serviceEndpoint}/repos/${userName}/${repo}/commits`;
 
 class GitHubClient extends Client {
 
@@ -27,6 +28,10 @@ class GitHubClient extends Client {
   milestones() {
     return this.get(milestonesAPICall);
   }
+
+  commits() {
+    return this.get(commitsAPICall);
+  }  
 
   activities() {
     return this.get(activitiesAPICall);

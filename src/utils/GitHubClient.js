@@ -8,6 +8,9 @@ const repo = 'fivenations';
 const issuesAPICall = `${serviceEndpoint}/repos/${userName}/${repo}/issues`;
 const milestonesAPICall = `${serviceEndpoint}/repos/${userName}/${repo}/milestones`;
 const activitiesAPICall = `${serviceEndpoint}/repos/${userName}/${repo}/events`;
+const commitsAPICall = `${serviceEndpoint}/repos/${userName}/${repo}/commits`;
+const reposAPICall = `${serviceEndpoint}/users/${userName}/repos`;
+const contributorsAPICall = `${serviceEndpoint}/repos/${userName}/${repo}/stats/contributors`;
 
 class GitHubClient extends Client {
 
@@ -28,8 +31,28 @@ class GitHubClient extends Client {
     return this.get(milestonesAPICall);
   }
 
+  commits() {
+    return this.get(commitsAPICall);
+  } 
+
   activities() {
     return this.get(activitiesAPICall);
+  }
+
+  totalCommits() {
+    return this.get(contributorsAPICall)
+      .then(contributors => {
+        return contributors.reduce((sum, contributor) => contributor.total + sum, 0);
+      });
+  }
+
+  stars() {
+    return this.get(reposAPICall)
+      .then(repos => {
+        if (!repos) return;
+        const fivenations = repos.filter(repo => repo.name === 'fivenations');
+        return fivenations.shift().stargazers_count || 0;
+      });
   }
 
   getHeaders() {

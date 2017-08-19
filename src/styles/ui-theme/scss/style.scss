@@ -1,9 +1,12 @@
+@import "./functions.scss";
 @import "./set_variables.scss";
 
 $icon-font-path: "~bootstrap-sass/assets/fonts/bootstrap/";
 
 @import "../../../../node_modules/bootstrap-sass/assets/stylesheets/bootstrap";
 @import "../../../../node_modules/spinkit/scss/spinners/3-wave.scss";
+
+@import "../../../../node_modules/animate.css/animate";
 
 @import "./custom.scss";
 @import "./hero-video.scss";

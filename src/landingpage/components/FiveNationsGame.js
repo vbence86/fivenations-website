@@ -85,7 +85,6 @@ export default class FiveNationsGame extends Component {
     this.app.start();
     this.gameHasStarted = true;
     $(document.body).addClass('fivenationsStarted');
-    $('video').get(0).parentNode.removeChild($('video').get(0));
   }
 
   scrollUp() {

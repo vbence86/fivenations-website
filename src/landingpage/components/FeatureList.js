@@ -11,10 +11,11 @@ export default class FeatureList extends Component {
 
   renderHeader() {
     return (
-      <div className="container-fluid headerContainer bg-light">
-        <div className="col-sm-12 col-xs-12 col-md-12 text-center">
-          <i className="fa fa-gears headerIcon"></i>
-          <h3>{this.state.header}</h3>
+      <div className="container-fluid bg-dark">
+        <div className="col-sm-12 col-xs-12 col-md-12 headerContainer">
+          <h2>{this.state.title}</h2>
+          <h4>{this.state.subtitle}</h4>
+          <p>{this.state.description}</p>
         </div>
       </div>
     );

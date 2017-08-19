@@ -177,8 +177,8 @@ hr {
   }
 }
 #support-us {
-  padding-top: 140px;
-  padding-bottom: 140px;
+  padding-top: 15%;
+  padding-bottom: 15%;
 
   i {
     color: $color-orange;
@@ -189,10 +189,13 @@ hr {
   h3 {
     margin-top: 0;
     margin-bottom: $font-size-large;
+    font-size: 60px;
+    font-weight: 800;
   }
   h4 {
     margin-top: 0;
     margin-bottom: $font-size-h1;
+    font-weight: normal;
   }
 }
 .margin-top-55 {
@@ -258,20 +261,19 @@ hr {
 }
 
 #contact-us {
-  padding-top: 90px;
-  padding-bottom: 90px;
+  padding-top: 15%;
+  padding-bottom: 15%;
 
-  box-shadow: 0 5px 50px rgba(0, 0, 0, 0.5);
-
-  .block {
-    h4 {
-      color: $white;
-    }
-  }
   h3 {
     margin-top: 0;
-    font-weight: 700;
+    font-size: 60px;
+    font-weight: 800;
   }
+  
+  h4 {
+    font-weight: normal;
+  }
+
   form {
     margin-top: $font-size-h2;
     margin-bottom: $font-size-h2;
@@ -887,6 +889,10 @@ a[data-action="play-game"] {
   }
 
   .developmentContainer {
+
+    margin-top: 15%;
+    margin-bottom: 15%;
+
     h2 {
       margin: 40px auto 80px;
     }
@@ -895,6 +901,8 @@ a[data-action="play-game"] {
 }
 
 .developmentDetailsContainer {
+
+  max-width: 1500px;
   display: inline-block;
   margin: 0 auto 30px;
 
@@ -1074,22 +1082,37 @@ a[data-action="play-game"] {
 
 #features {
 
-  position: relative;
-  box-shadow: 0 25px 50px rgba(0, 0, 0, 0.25);
-  z-index: 1;
-
   div {
     padding-left: 0; 
     padding-right: 0; 
   }
 
   .headerContainer {
-    position: relative;
-    padding: 75px 0;
-    box-shadow: 0 50px 50px rgba(0, 0, 0, 0.5);
-    z-index: 1;
+
+    width: 70%;
+    max-width: 800px;
+    margin: 15%;
+    float: none;
+
+    color: white;
+    
+    h2 {
+      font-size: 60px;
+      font-weight: 800;
+    }
+
+    h4 {
+      margin: 0 auto 40px;
+      font-size: 60px;
+      font-weight: normal;      
+    }
+
+    p {
+      font-size: 16px;
+    }
 
   }
+
 
   .FeatureItem {
 
@@ -1150,7 +1173,7 @@ a[data-action="play-game"] {
         }
 
         &.backgroundImage {
-          opacity: 0.05;
+          opacity: 0.075;
         }
       }
 
@@ -1167,6 +1190,11 @@ a[data-action="play-game"] {
 
   .figures-block {
 
+    @include mobile { 
+      border-right: none;
+      border-bottom: 1px solid rgba(108, 113, 118, .5); 
+    }
+
     padding: 80px 0;
     border-right: 1px solid rgba(108, 113, 118, .5);
     color: rgb(108, 113, 118);
@@ -1174,12 +1202,16 @@ a[data-action="play-game"] {
     text-transform: uppercase;
     text-align: center;
 
+    &:last-child { border: none; }
+
     p span {
       font-size: 32px;
       color: white;
     }
 
-  }  
+  }
+
+  .donately-block { cursor: pointer; }  
 
 }
 
@@ -1189,14 +1221,7 @@ a[data-action="play-game"] {
 }
 
 .bg-dark {
-
-  /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#375666+0,0e0533+99 */
-  background: #375666; /* Old browsers */
-  background: -moz-radial-gradient(center, ellipse cover, #375666 0%, #0e0533 99%); /* FF3.6-15 */
-  background: -webkit-radial-gradient(center, ellipse cover, #375666 0%,#0e0533 99%); /* Chrome10-25,Safari5.1-6 */
-  background: radial-gradient(ellipse at center, #375666 0%,#0e0533 99%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#375666', endColorstr='#0e0533',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
-
+  background-color: $dark-purple;
 }
 
 .viewport-animation:not(.in-viewport) {

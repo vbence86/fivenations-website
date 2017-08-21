@@ -1113,7 +1113,6 @@ a[data-action="play-game"] {
 
   }
 
-
   .FeatureItem {
 
     max-width: 1500px;
@@ -1130,7 +1129,7 @@ a[data-action="play-game"] {
     }
 
     p {
-      font-size: 20px;
+      font-size: 16px;
       text-align: justify;
 
       @include dekstop-small-screen { font-size: 13px; }

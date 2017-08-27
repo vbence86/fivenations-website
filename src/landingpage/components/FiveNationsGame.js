@@ -38,8 +38,8 @@ export default class FiveNationsGame extends Component {
       .add('default', game => {
 
         game.map.new({
-          width: 128,
-          height: 128,
+          width: 32,
+          height: 32,
         });
 
         game.eventEmitter.synced.players.add({
@@ -52,7 +52,7 @@ export default class FiveNationsGame extends Component {
           team: 2,
         });
 
-        for (var i = 100; i >= 0; i -= 1) {
+        for (var i = 2; i >= 0; i -= 1) {
           var id = [
             'hurricane',
             'orca',
@@ -68,8 +68,8 @@ export default class FiveNationsGame extends Component {
           game.eventEmitter.synced.entities.add({
             id: id,
             team: Math.random() > 0.5 ? 1 : 2,
-            x: 0 + Math.random() * 6000,
-            y: 0 + Math.random() * 6000,
+            x: 0 + Math.random() * 600,
+            y: 0 + Math.random() * 600,
           });
         }
 
@@ -80,18 +80,10 @@ export default class FiveNationsGame extends Component {
   }
 
   startGame() {
-    this.scrollUp();
     if (!this.app || this.gameHasStarted) return;
     this.app.start();
     this.gameHasStarted = true;
     $(document.body).addClass('fivenationsStarted');
-  }
-
-  scrollUp() {
-    if ($(window).scrollTop() <= 100) return;
-    jQuery('html, body').animate({
-      scrollTop: $(`#${gameContainerId}`).offset().top + 300,
-    }, 250);
   }
 
   render() {

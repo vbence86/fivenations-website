@@ -40,9 +40,9 @@ export default class CTABox extends Component {
       <section className="container-fluid bg-light" id="support-us">
         <div className="row">
           <div className="col-sm-12 text-center">
-            <h3>{this.state.header}</h3>
-            <h4><i className="fa fa-thumbs-up fa-2x"></i> {this.state.subtitle}</h4>
-            <button data-toggle="modal" data-target="#donately-modal" className="btn btn-orange">{this.state.buttonLabel}</button>
+            <h3 className="viewport-animation animated fadeInUp">{this.state.header}</h3>
+            <h4 className="viewport-animation animated fadeInUp"><i className="fa fa-thumbs-up fa-2x"></i> {this.state.subtitle}</h4>
+            <button data-toggle="modal" data-target="#donately-modal" className="btn btn-orange viewport-animation animated fadeInUp">{this.state.buttonLabel}</button>
             <div className="modal fade" id="donately-modal" tabIndex="-1" role="dialog" aria-hidden="true">
               <div className="modal-dialog" role="document">
                 <div className="modal-content">

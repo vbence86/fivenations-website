@@ -831,25 +831,25 @@ a[data-action="play-game"] {
   }
 }
 
-#fivenations-game {
+#play-game-modal {
 
-  height: 0;
-  opacity: 0;
-  transition: all 0.5s ease-in-out;
-
-  &.open {
-    position: relative;
-    height: 100%;
-    opacity: 1;
+  .modal-dialog,
+  .modal-content {
+    min-width: 1024px;
+    min-height: 768px;
   }
 
+  .modal-dialog { margin: 75px auto; }
+  .modal-body { padding: 0 }
+}
+
+#fivenations-game {
   /**
    * Phaser adds inline style attributes to alter vital attributes of the canvas hence the important
    */
   canvas {
     margin: auto !important;
   }
-
 }
 
 #development {
@@ -1113,7 +1113,6 @@ a[data-action="play-game"] {
 
   }
 
-
   .FeatureItem {
 
     max-width: 1500px;
@@ -1130,7 +1129,7 @@ a[data-action="play-game"] {
     }
 
     p {
-      font-size: 20px;
+      font-size: 16px;
       text-align: justify;
 
       @include dekstop-small-screen { font-size: 13px; }

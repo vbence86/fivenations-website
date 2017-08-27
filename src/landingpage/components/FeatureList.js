@@ -13,9 +13,9 @@ export default class FeatureList extends Component {
     return (
       <div className="container-fluid bg-dark">
         <div className="col-sm-12 col-xs-12 col-md-12 headerContainer">
-          <h2>{this.state.title}</h2>
-          <h4>{this.state.subtitle}</h4>
-          <p>{this.state.description}</p>
+          <h2 className="viewport-animation animated bounceInLeft">{this.state.title}</h2>
+          <h4 className="viewport-animation animated bounceInLeft delay-250">{this.state.subtitle}</h4>
+          <p className="viewport-animation animated bounceInLeft delay-500">{this.state.description}</p>
         </div>
       </div>
     );
@@ -47,18 +47,19 @@ export default class FeatureList extends Component {
     );
   }
 
-  renderTextContainer({header, description, url, ctaAction, ctaLabel}) {
+  renderTextContainer({header, description, url, ctaAction, ctaLabel, idx}) {
+    const anim = idx % 2 === 0 ? 'bounceInLeft' : 'bounceInRight';
     return (
       <div className="col-sm-6 col-xs-6 col-md-6">
         <div className="imageContainer">
           <img className="backgroundImage" src={url} alt="animation" />
           <div className="textContainer">
-            <h3 className="text-uppercase">{header}</h3>
-            <p>{description}</p>
+            <h3 className={`text-uppercase viewport-animation animated ${anim}`}>{header}</h3>
+            <p className={`viewport-animation animated ${anim}`}>{description}</p>
             {(() => {
               if (!ctaLabel) return null;
               return (
-                <p>
+                <p className={`viewport-animation animated ${anim}`}>
                   <a data-action={ctaAction} className="btn btn-orange"><i className="fa fa-play-circle"/> {ctaLabel}</a>
                 </p>
               );

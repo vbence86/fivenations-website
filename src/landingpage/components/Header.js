@@ -69,9 +69,9 @@ export default class Header extends Component {
               {this.renderSocialIcons()}
             </div>
             <div id="secondary-cta-container" className="col-sm-12 text-center">
-              <h2 className="viewport-animation animated fadeInUp delay-250">{this.state.secondHeader}</h2>
-              <h4 className="viewport-animation animated fadeInUp delay-500">{this.state.secondSubHeader}</h4>
-              <a data-toggle="modal" data-target="#donately-modal" className="btn btn-orange viewport-animation animated fadeInUp delay-500">{this.state.secondCtaButton}</a>
+              <h2 className="viewport-animation animated fadeIn">{this.state.secondHeader}</h2>
+              <h4 className="viewport-animation animated fadeIn delay-250">{this.state.secondSubHeader}</h4>
+              <a data-toggle="modal" data-target="#donately-modal" className="btn btn-orange viewport-animation animated fadeIn delay-500">{this.state.secondCtaButton}</a>
             </div>
           </div>
           <a onClick={this.onOpenGame} id="side-cta" data-toggle="modal" data-target="#play-game-modal" data-action="play-game" href="#play-fivenations" className="btn btn-orange"><i className="fa fa-play-circle"/> {this.state.ctaButton}</a>

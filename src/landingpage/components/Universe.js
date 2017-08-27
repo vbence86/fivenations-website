@@ -4,6 +4,11 @@ import React, {Component} from 'react';
 export default class Universe extends Component {
 
   componentDidMount() {
+    this.initScrollAnimations();
+    this.initViewportAnimationS();
+  }
+
+  initScrollAnimations() {
     // Smooth Scroll Start
     var navInneer = $('.scroll-nav');
     navInneer.singlePageNav({
@@ -28,8 +33,10 @@ export default class Universe extends Component {
       } else {
         $('#side-cta').removeClass('open');
       }
-    });
+    });    
+  }
 
+  initViewportAnimationS() {
     // adding class when an animatble element is in viewport
     const viewportSelector = '.viewport-animation';
     const viewportClassName = 'in-viewport';
@@ -42,7 +49,6 @@ export default class Universe extends Component {
         this.classList.remove(viewportClassName);
       }
     });
-
   }
 
   render() {

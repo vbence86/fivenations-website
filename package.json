@@ -41,6 +41,7 @@
     "postcss-units": "^1.1.0",
     "react": "^15.6.1",
     "react-burger-menu": "^2.1.4",
+    "react-countup": "^2.2.0",
     "react-dev-utils": "^0.5.2",
     "react-dom": "^15.6.1",
     "react-fusioncharts": "^1.0.4",

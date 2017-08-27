@@ -1,6 +1,10 @@
+/* globals $, window */
 import React, {Component} from 'react';
 import GitHubClient from '../../utils/GitHubClient';
 import DonatelyClient from '../../utils/DonatelyClient';
+import CountUp from 'react-countup';
+
+const CONTAINER_ID = 'development-summary'; 
 
 export default class Summary extends Component {
 
@@ -12,40 +16,63 @@ export default class Summary extends Component {
     this.state = {};    
 
     this.gitHubClient.issues().then(issues => {
-      this.setState({
-        issues: issues.length,
-      });
+      this.issues = issues.length;
     });
 
     this.gitHubClient.stars().then(stars => {
-      this.setState({stars});
+      this.stars = stars;
     });
 
     this.gitHubClient.totalCommits().then(commits => {
-      this.setState({commits});
+      this.commits = commits;
     });
 
     this.donatelyClient.totalDonations().then(donations => {
-      this.setState({donations});
+      this.donations = donations;
     });
    
   }
 
+  componentDidMount() {
+    this.testIfSummaryIsInViewport();
+  }
+
+  testIfSummaryIsInViewport() {
+    $(`#${CONTAINER_ID}`).inViewport( px => {
+      if (px > 0) {
+        this.setState({
+          issues: this.issues,
+          stars: this.stars,
+          commits: this.commits,
+          donations: this.donations,
+        });
+      }
+    });
+  }
+
   render() {
     return (
-      <section className="container-fluid" id="development-summary">
+      <section className="container-fluid" id={CONTAINER_ID}>
         <div className="col-sm-12 col-xs-12">
           <div className="col-sm-3 cols-xs-12 figures-block">
-            <p><span>{this.state.issues}</span> / Open Issues</p>
+            <p>
+              <CountUp start={0} end={this.state.issues} duration={3} /> / Open issues
+            </p>
           </div>
           <div className="col-sm-3 cols-xs-12 figures-block">
-            <p><span>{this.state.stars}</span> / Stars on Github</p>
+            <p>              
+              <CountUp start={0} end={this.state.stars} duration={3} /> / Stars on Github
+            </p>
           </div>
           <div className="col-sm-3 cols-xs-12 figures-block">
-            <p><span>{this.state.commits}</span> / Commits</p>
+            <p>
+              <CountUp start={0} end={this.state.commits} duration={3} /> / Commits
+            </p>
           </div>
           <div data-toggle="modal" data-target="#donately-modal" className="col-sm-3 cols-xs-12 figures-block donately-block">
-            <p><span>${this.state.donations}</span> / Fund raised</p>
+            <p>
+              <CountUp start={0} end={this.state.donations} duration={3} prefix="$" /> / Fund raised
+            </p>
           </div>                              
         </div>
       </section>

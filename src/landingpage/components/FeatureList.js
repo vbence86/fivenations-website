@@ -6,7 +6,6 @@ export default class FeatureList extends Component {
     super(props);
     this.contentProvider = this.props.contentProvider;
     this.state = this.contentProvider.get('landingPage').featureList;
-    console.log(this.state);
   }
 
   renderHeader() {

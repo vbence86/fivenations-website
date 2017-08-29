@@ -26,7 +26,6 @@ class DonatelyClient extends Client {
   totalDonations() {
     return this.donations()
       .then(donations => {
-        console.log(donations);
         return donations.reduce((sum, donation) => parseInt(donation.amount, 10) + sum, 0) || 0;
       });
   }

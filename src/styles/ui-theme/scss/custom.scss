@@ -886,6 +886,15 @@ a[data-action="play-game"] {
       font-size: 16px;
     }
 
+    .gitHubStarContainer {
+      margin: 40px 0 0 0;
+
+      iframe {
+        border: 0;
+      }
+
+    }
+
   }
 
   .developmentContainer {

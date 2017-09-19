@@ -970,9 +970,31 @@ a[data-action="play-game"] {
     padding: 0;
   }
 
+  .versionContainer {
+
+    margin: 40px auto;
+    text-align: center;
+
+    a {
+      padding: 20px 40px;     
+      border: 1px solid $color-webellion-red;
+      border-radius: 5px;
+      color: $color-webellion-red;
+      line-height: 25px;
+      font-size: 25px;
+      font-weight: normal;
+      text-align: center;
+      text-decoration: none;
+
+      &:hover {
+        background-color: $color-webellion-red;
+        color: white;
+      }
+    }
+  }
+
   a { 
     color: $color-grey; 
-    font-weight: bold; 
   }
 
   .issueItem {

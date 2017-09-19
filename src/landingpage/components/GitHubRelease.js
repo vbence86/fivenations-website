@@ -20,7 +20,9 @@ export default class GitHubRelease extends Component {
     if (!this.state.release) return null;
     return (
       <div>
-        {JSON.stringify(this.state.release, null, '    ')}
+        <div className="versionContainer">
+          <a href="https://github.com/vbence86/fivenations/releases" target="_blank">current stable release {this.state.release.tag_name}</a>
+        </div>
       </div>
     );
   }

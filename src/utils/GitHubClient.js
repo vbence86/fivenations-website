@@ -57,7 +57,7 @@ class GitHubClient extends Client {
   }
 
   latestRelease() {
-    return this.get(releasesAPICall).then(releases => releases.filter((v, idx) => idx === 0));
+    return this.get(releasesAPICall).then(releases => releases.shift());
   }
 
   getHeaders() {

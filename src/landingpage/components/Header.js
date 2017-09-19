@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import HeroVideo from './HeroVideo';
 import FiveNationsGame from './FiveNationsGame';
+import {trackOpenGame} from './GoogleAnalytics';
 
 const heroVideo = {
   poster: '/images/first-frame-hero.jpg',
@@ -44,9 +45,8 @@ export default class Header extends Component {
   }
 
   onOpenGame() {
-    this.setState({
-      isGameOpen: true,
-    });
+    this.setState({isGameOpen: true});
+    trackOpenGame();
   }
 
   render() {

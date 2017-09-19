@@ -11,6 +11,7 @@ const activitiesAPICall = `${serviceEndpoint}/repos/${userName}/${repo}/events`;
 const commitsAPICall = `${serviceEndpoint}/repos/${userName}/${repo}/commits`;
 const reposAPICall = `${serviceEndpoint}/users/${userName}/repos`;
 const contributorsAPICall = `${serviceEndpoint}/repos/${userName}/${repo}/stats/contributors`;
+const releasesAPICall = `${serviceEndpoint}/repos/${userName}/${repo}/releases`;
 
 class GitHubClient extends Client {
 
@@ -53,6 +54,10 @@ class GitHubClient extends Client {
         const fivenations = repos.filter(repo => repo.name === 'fivenations');
         return fivenations.shift().stargazers_count || 0;
       });
+  }
+
+  latestRelease() {
+    return this.get(releasesAPICall).then(releases => releases.shift());
   }
 
   getHeaders() {

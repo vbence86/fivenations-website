@@ -56,25 +56,16 @@ export {
 
 export default class GoogleAnalytics extends Component {
 
-  static propTypes = {
-    account: React.PropTypes.string.isRequired,
-    history: React.PropTypes.object,
-  };
-
   constructor(props) {
     super(props);
     this.contentProvider = this.props.contentProvider;
     const content = this.contentProvider.get('landingPage');
-
-    this.setState({
-      account: content.gaAccount, 
-    });
-
+    this.account = content.gaAccount;
   }
 
   componentDidMount() {
     window.ga = window.ga || (() => { (ga.q = ga.q || []).push(arguments); }); ga.l = +new Date();
-    const account = this.state.account;
+    const account = this.account;
     const scriptSrc = '//google-analytics.com/analytics.js';
     $.getScript(scriptSrc, () => {
       // Track Route changes

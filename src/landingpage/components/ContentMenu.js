@@ -1,7 +1,6 @@
 import React, {Component} from 'react';
 import Summary from './Summary';
-import TravisBuilds from './TravisBuilds';
-import GitHubIssues from './GitHubIssues';
+import GitHubRelease from './GitHubRelease';
 import InstagramPictures from './InstagramPictures';
 
 const gitHubUser = 'vbence86';
@@ -31,7 +30,7 @@ export default class ContentMenu extends Component {
         </div>
         <Summary contentProvider={this.contentProvider} />
         <div className="col-sm-10 col-sm-offset-1 developmentContainer">
-          <TravisBuilds {...this.state.imageMenuItems[0]}/>
+          <GitHubRelease {...this.state.imageMenuItems[0]}/>
           <InstagramPictures {...this.state.imageMenuItems[1]}/>              
         </div>
       </section>

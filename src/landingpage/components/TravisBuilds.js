@@ -17,9 +17,8 @@ export default class TravisBuilds extends Component {
 
   renderBuilds() {
     if (!this.state.builds) return null;
-    return this.state.builds
-      .filter((v, i) => i < 5)
-      .map((v, i) => this.renderBuild(v, i));
+    const firstBuild = this.state.builds.unshift();
+    return this.renderBuild(firstBuild, 0);
   }
 
   renderBuild(build, idx) {

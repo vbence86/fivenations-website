@@ -33,7 +33,6 @@ export default class ContentMenu extends Component {
         <div className="col-sm-10 col-sm-offset-1 developmentContainer">
           <TravisBuilds {...this.state.imageMenuItems[0]}/>
           <InstagramPictures {...this.state.imageMenuItems[1]}/>              
-          <GitHubIssues {...this.state.imageMenuItems[2]}/>
         </div>
       </section>
     );

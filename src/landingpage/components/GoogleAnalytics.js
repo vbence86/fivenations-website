@@ -60,7 +60,7 @@ export default class GoogleAnalytics extends Component {
     super(props);
     this.contentProvider = this.props.contentProvider;
     const content = this.contentProvider.get('landingPage');
-    this.account = content.gaAccount;
+    this.account = content.gaAcount;
   }
 
   componentDidMount() {

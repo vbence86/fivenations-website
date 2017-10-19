@@ -148,7 +148,7 @@ module.exports = {
       // in development "style" loader enables hot editing of CSS.
       {
         test: /\.css|scss|sass$/,
-        loader: 'style!css!sass'
+        loader: 'style!css!sass'      
       },
 
       // JSON is not enabled by default in Webpack but both Node and Browserify
@@ -164,7 +164,7 @@ module.exports = {
         query: {
           name: 'static/media/[name].[hash:8].[ext]'
         }
-      }
+      }     
       // ** STOP ** Are you adding a new loader?
       // Remember to add the new extension(s) to the "url" loader exclusion list.
     ]

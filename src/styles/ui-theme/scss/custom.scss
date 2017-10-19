@@ -179,6 +179,7 @@ hr {
 #support-us {
   padding-top: 15%;
   padding-bottom: 15%;
+  color: $white;
 
   i {
     color: $color-orange;
@@ -677,7 +678,7 @@ figure {
 #preloader {
   position: fixed;
   z-index: 999;
-  background: white;
+  background: $white;
   width: 100%;
   height: 100vh;
   display: flex;
@@ -762,7 +763,7 @@ figure {
 .headerIcon {
   padding: 10px;      
   background-color: $color-webellion-red;
-  color: white;
+  color: $white;
   font-size: 25px;
   border-radius: 50%;
 }
@@ -854,6 +855,12 @@ a[data-action="play-game"] {
 
 #development {
 
+  background-image: url('../public/images/fivenations_2developmentbody_planet.jpg');
+  background-size: contain;
+  color: $white;
+
+  @include mobile { background-size: inherit; }  
+
   &.container-fluid {
     padding: 0;
   }
@@ -867,13 +874,13 @@ a[data-action="play-game"] {
 
     width: 70%;
     max-width: 800px;
-    margin: 15%;
     float: none;
+    margin: 15%;
     
     h2 {
       font-size: 60px;
       font-weight: 800;
-      color: black;
+      color: $white;
     }
 
     h4 {
@@ -899,8 +906,9 @@ a[data-action="play-game"] {
 
   .developmentContainer {
 
-    margin-top: 15%;
-    margin-bottom: 15%;
+    padding: 15%;
+    color: black;
+    background-color: $white;
 
     h2 {
       margin: 40px auto 80px;
@@ -988,7 +996,7 @@ a[data-action="play-game"] {
 
       &:hover {
         background-color: $color-webellion-red;
-        color: white;
+        color: $white;
       }
     }
   }
@@ -1034,7 +1042,7 @@ a[data-action="play-game"] {
   .pin {
     margin: 20px 20px 0 0;
     padding: 10px;
-    background-color: white;
+    background-color: $white;
     box-shadow: 0 0 100px 1px rgba(0, 0, 0, 0.5);
     transition: transform 0.5s;
   }
@@ -1095,7 +1103,7 @@ a[data-action="play-game"] {
         max-width: 150px;
         margin-bottom: 20px;
         border-radius: 50%;
-        border: 2px solid white;
+        border: 2px solid $white;
         box-shadow: 0 10px 30px 1px rgba(0, 0, 0, 0.25);
       }
 
@@ -1120,13 +1128,18 @@ a[data-action="play-game"] {
 
   .headerContainer {
 
-    width: 70%;
-    max-width: 800px;
-    margin: 15%;
+    width: 100%;
+    max-width: 1500px;
+    margin: auto;
     float: none;
-
+    text-align: center;
     color: white;
     
+    img {
+      width: 100%;
+      height: auto;
+    }    
+
     h2 {
       font-size: 60px;
       font-weight: 800;
@@ -1134,12 +1147,18 @@ a[data-action="play-game"] {
 
     h4 {
       margin: 0 auto 40px;
-      font-size: 60px;
-      font-weight: normal;      
+      font-size: 50px;
+      font-weight: normal;
+      color: $light-blue;      
     }
 
     p {
       font-size: 16px;
+    }
+
+    .textContainer {
+      width: 75%;
+      margin: 15% auto;
     }
 
   }
@@ -1149,6 +1168,7 @@ a[data-action="play-game"] {
     position: relative;
     max-width: 1500px;
     color: white;
+    overflow: hidden;
 
     h3 {
       margin-bottom: 10%;
@@ -1212,9 +1232,14 @@ a[data-action="play-game"] {
 
     .textBackground {
       position: absolute;
-      background-color: $dark-blue;
-      width: 33%;
-      height: 100%;
+      width: 40%;
+      height: 150%;
+      left: 5%;
+      top: -30%;
+      background-color: #0E0533;      
+      transform: rotateZ(17deg);
+      transform-origin: top;
+      opacity: 0.85;  
     }
 
   }
@@ -1244,7 +1269,7 @@ a[data-action="play-game"] {
 
     p span {
       font-size: 32px;
-      color: white;
+      color: $white;
     }
 
   }
@@ -1253,13 +1278,32 @@ a[data-action="play-game"] {
 
 }
 
+.highlighted {
+  position: relative;
+
+  span:first-child {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 0;
+  }
+
+  span:last-child {
+    position: relative;
+  }
+}
 
 .bg-light {
-  background-color: white;
+  background-color: $white;
 }
 
 .bg-dark {
   background-color: $dark-purple;
+}
+
+.bg-dark-blue {
+  background-color: $dark-blue;
 }
 
 .viewport-animation:not(.in-viewport) {

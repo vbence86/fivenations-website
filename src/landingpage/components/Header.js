@@ -55,12 +55,14 @@ export default class Header extends Component {
       <HeroVideo {...heroVideo}>
         <div id="home" className="container-fluid">
           <div className="row">
-            <ul className="nav nav-pills menu-center margin-top-30 scroll-nav scroll-down">
-              <li role="presentation" className="active"><a href="#home"><i className="fa fa-home" />{this.state.pageTitle}</a></li>
+            <ul className="nav nav-pills menu-center margin-top-30 scroll-nav scroll-down bg-separator">
+              <li role="presentation" className="active">
+                <a href="#home"><span className="fivenations_0header_logo_2color sprite" /></a>
+              </li>
               {this.renderMenu()}
             </ul>
             <div id="main-cta-container" className="col-sm-12 text-center">
-              <h1 className="animated fadeInUp">{this.state.header}</h1>
+              <p><span className="fivenations_1videobody_logo sprite"/></p>
               <h4 className="animated fadeInUp delay-250">{this.state.subHeader}</h4>
               <a onClick={this.onOpenGame} data-toggle="modal" data-target="#play-game-modal" data-action="play-game" href="#play-fivenations" className="btn btn-orange"><i className="fa fa-play-circle"/> {this.state.ctaButton}</a>
             </div>

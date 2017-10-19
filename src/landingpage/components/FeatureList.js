@@ -10,11 +10,17 @@ export default class FeatureList extends Component {
 
   renderHeader() {
     return (
-      <div className="container-fluid bg-dark">
+      <div className="container-fluid bg-dark-blue">
         <div className="col-sm-12 col-xs-12 col-md-12 headerContainer">
-          <h2 className="viewport-animation animated bounceInLeft">{this.state.title}</h2>
-          <h4 className="viewport-animation animated bounceInLeft delay-250">{this.state.subtitle}</h4>
-          <p className="viewport-animation animated bounceInLeft delay-500">{this.state.description}</p>
+          <img src="images/fivenations_3game_pic.jpg" />
+          <div className="textContainer">
+            <h2 className="highlighted viewport-animation animated bounceInLeft">
+              <span className="fivenations_3game_backgroundglow sprite" />
+              <span>{this.state.title}</span>
+            </h2>
+            <h4 className="viewport-animation animated bounceInLeft delay-250">{this.state.subtitle}</h4>
+            <p className="viewport-animation animated bounceInLeft delay-500">{this.state.description}</p>
+          </div>
         </div>
       </div>
     );

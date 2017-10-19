@@ -8,5 +8,6 @@ $icon-font-path: "~bootstrap-sass/assets/fonts/bootstrap/";
 
 @import "../../../../node_modules/animate.css/animate";
 
-@import "./custom.scss";
-@import "./hero-video.scss";
+@import "./custom";
+@import "./hero-video";
+@import "./webpage_atlas";

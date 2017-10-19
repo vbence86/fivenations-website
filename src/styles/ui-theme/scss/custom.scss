@@ -1146,6 +1146,7 @@ a[data-action="play-game"] {
 
   .FeatureItem {
 
+    position: relative;
     max-width: 1500px;
     color: white;
 
@@ -1171,14 +1172,14 @@ a[data-action="play-game"] {
 
     .textContainer {
       position: absolute;
+      max-width: 33%;
       top: 0;
       left: 0;
-      padding: 10%;
+      padding: 5%;
 
       .btn {
         margin: 10% auto;
 
-        @include tablet { display: none; }
         @include mobile { display: none; }
 
       }
@@ -1207,6 +1208,13 @@ a[data-action="play-game"] {
         }
       }
 
+    }
+
+    .textBackground {
+      position: absolute;
+      background-color: $dark-blue;
+      width: 33%;
+      height: 100%;
     }
 
   }

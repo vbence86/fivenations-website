@@ -21,50 +21,44 @@ export default class FeatureList extends Component {
   }
 
   renderFeatureSections() {
-    return this.state.featureItems.map( (v, i) => {
-      const blocks = [
-        this.renderImageContainer({idx: i, url: v.image.file.url}),
-        this.renderTextContainer({idx: i, url: v.image.file.url, ...v}),
-      ];
-      if (i % 2 === 0) blocks.reverse();
-      return (
-        <div className="container-fluid FeatureItem" key={i}>
-          {blocks}
-        </div>
-      );
-      
-    });
+    return this.state.featureItems.map( (v, i) => (
+      <div className="container-fluid FeatureItem" key={i}>
+        {[
+          this.renderImageContainer({idx: i, url: v.image.file.url}),
+          this.renderTextBackground(),
+          this.renderTextContainer({idx: i, url: v.image.file.url, ...v}),
+        ]}
+      </div>
+    ));
   }
 
   renderImageContainer({url}) {
     return (
-      <div className="col-sm-6 col-xs-6 col-md-6">
-        <div className="imageContainer">
-          <img className="zoomAnimation" src={url} alt="animation" />
-        </div>
+      <div className="imageContainer">
+        <img src={url} alt="promotinal pictures from the game" />
       </div>
     );
   }
 
-  renderTextContainer({header, description, url, ctaAction, ctaLabel, idx}) {
-    const anim = idx % 2 === 0 ? 'bounceInLeft' : 'bounceInRight';
+  renderTextBackground() {
     return (
-      <div className="col-sm-6 col-xs-6 col-md-6">
-        <div className="imageContainer">
-          <img className="backgroundImage" src={url} alt="animation" />
-          <div className="textContainer">
-            <h3 className={`text-uppercase viewport-animation animated ${anim}`}>{header}</h3>
-            <p className={`viewport-animation animated ${anim}`}>{description}</p>
-            {(() => {
-              if (!ctaLabel) return null;
-              return (
-                <p className={`viewport-animation animated ${anim}`}>
-                  <a data-action={ctaAction} className="btn btn-orange"><i className="fa fa-play-circle"/> {ctaLabel}</a>
-                </p>
-              );
-            })()}
-          </div>
-        </div>
+      <div className="textBackground" />
+    );
+  }
+
+  renderTextContainer({header, description, url, ctaAction, ctaLabel}) {
+    return (
+      <div className="textContainer">
+        <h3 className="text-uppercase viewport-animation animated bounceInLeft">{header}</h3>
+        <p className="viewport-animation animated bounceInLeft">{description}</p>
+        {(() => {
+          if (!ctaLabel) return null;
+          return (
+            <p className="viewport-animation animated bounceInLeft">
+              <a data-action={ctaAction} className="btn btn-orange"><i className="fa fa-play-circle"/> {ctaLabel}</a>
+            </p>
+          );
+        })()}
       </div>
     );    
   }

@@ -26,7 +26,10 @@ export default class ContactUs extends Component {
         <div className="row">
           <div className="overlay"></div>
           <div className="col-sm-12 text-center text-capitalize">
-            <h3>{this.state.header}</h3>
+            <h3 className="highlighted">
+              <span className="fivenations_3game_backgroundglow sprite" />
+              <span>{this.state.header}</span>
+            </h3>
             <h4>{this.state.subtitle}</h4>
             <hr />
           </div>

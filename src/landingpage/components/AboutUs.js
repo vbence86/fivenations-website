@@ -45,7 +45,7 @@ class FooterSection extends Component {
       <div className="col-md-12 col-sm-12 col-xs-12 text-center aboutUsFooter">
         <p>{this.props.text}</p>
         <a href="http://www.webellionlimited.com" target="_blank">
-          <img alt="webellion" src={require('../../../public/images/webellion.png')} />
+          <img alt="webellion" src="images/webellion.png" />
         </a>
       </div>    
     );

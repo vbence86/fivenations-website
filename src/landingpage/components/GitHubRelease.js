@@ -31,7 +31,7 @@ export default class GitHubRelease extends Component {
     return (
       <div className="developmentDetailsContainer" id="github-issues-container">
         <div className="col-xs-12 col-md-4">
-          <img height={175} width={200} src={require('../../../public/images/github.jpg')} alt="github" />
+          <img height={175} width={200} src="images/github.jpg" alt="github" />
         </div>
         <div className="col-xs-12 col-md-8 textContainer">
           <h2 className="viewport-animation">{this.props.title}</h2>

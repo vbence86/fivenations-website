@@ -61,7 +61,7 @@ export default class FeatureList extends Component {
           if (!ctaLabel) return null;
           return (
             <p className="viewport-animation animated bounceInLeft">
-              <a data-action={ctaAction} className="btn btn-orange"><i className="fa fa-play-circle"/> {ctaLabel}</a>
+              <a data-action={ctaAction} className="fivenations_3game_btn_tryit_base sprite" />
             </p>
           );
         })()}

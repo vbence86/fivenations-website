@@ -21,10 +21,6 @@ a {
   li {
     a {
       &.sdm-active {
-        background: $white;
-        color: $purple ;
-        height: 20px;
-        border-radius: 5px;
         animation: grow .25s ease;
       }
     }
@@ -102,6 +98,41 @@ hr {
       }
     }
   }
+}
+
+ul.nav li {
+  a {
+    span {
+      &:first-child {
+        position: absolute;
+        left: 50px;
+        top: 10px;
+        visibility: hidden;
+        transform: translate(-50%, -50%);
+        z-index: 1;  
+      }
+      &:last-child {
+        position: relative;
+        z-index: 10;
+      }
+
+    }
+
+    &.sdm-active {
+      span:first-child { 
+        visibility: visible; 
+      }
+    }
+
+  }
+}
+
+#logo-small {
+  position: fixed;
+  left: 0px;
+  top: 0px;
+  transform: scale(0.6);
+  z-index: 10000;
 }
 
 #mix-wrapper {
@@ -812,7 +843,6 @@ figure {
   position: fixed;
   right: -100px;
   top: 50%;
-  transform: translate(0, -50%) rotateZ(90deg);
   transition: right 0.2s ease-out;
   z-index: 99;
 
@@ -825,8 +855,6 @@ figure {
 
 a[data-action="play-game"] {
   opacity: 1;
-  transition: all 0.5s ease-out;
-
   body:not(.fivenationsLoaded) & {
     opacity: 0;
   }
@@ -919,7 +947,7 @@ a[data-action="play-game"] {
 
 .developmentDetailsContainer {
 
-  max-width: 1500px;
+  max-width: 1000px;
   display: inline-block;
   margin: 0 auto 30px;
 

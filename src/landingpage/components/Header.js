@@ -29,7 +29,12 @@ export default class Header extends Component {
 
   renderMenu() {
     return this.state.headerNavigation.map( (v, i) => (
-      <li role="presentation" key={i}><a href={v.href}>{v.label}</a></li>
+      <li role="presentation" key={i}>
+        <a href={v.href}>
+          <span className="fivenations_0header_menu_highlight sprite" />
+          <span>{v.label}</span>
+        </a>
+      </li>
     ));
   }
 
@@ -55,10 +60,8 @@ export default class Header extends Component {
       <HeroVideo {...heroVideo}>
         <div id="home" className="container-fluid">
           <div className="row">
-            <ul className="nav nav-pills menu-center margin-top-30 scroll-nav scroll-down bg-separator">
-              <li role="presentation" className="active">
-                <a href="#home"><span className="fivenations_0header_logo_2color sprite" /></a>
-              </li>
+            <a href="#home"><span id="logo-small" className="fivenations_0header_logo_2color sprite" /></a>          
+            <ul className="nav nav-pills menu-center margin-top-30 scroll-nav scroll-down bg-separator bg-menu">
               {this.renderMenu()}
             </ul>
             <div id="main-cta-container" className="col-sm-12 text-center">

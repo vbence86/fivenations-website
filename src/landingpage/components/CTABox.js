@@ -51,7 +51,7 @@ export default class CTABox extends Component {
               <span className="fivenations_3game_backgroundglow sprite" />
               <span>{this.state.header}</span>
             </h3>
-            <h4 className="viewport-animation animated fadeInUp"><i className="fa fa-thumbs-up fa-2x"></i> {this.state.subtitle}</h4>
+            <h4 className="viewport-animation animated fadeInUp">{this.state.subtitle}</h4>
             <a onClick={this.onDonate} data-toggle="modal" data-target="#donately-modal" className="fivenations_4supportus_btn_donate_base sprite viewport-animation animated fadeInUp" />
             <div className="modal fade" id="donately-modal" tabIndex="-1" role="dialog" aria-hidden="true">
               <div className="modal-dialog" role="document">

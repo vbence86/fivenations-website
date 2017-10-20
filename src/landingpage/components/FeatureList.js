@@ -72,9 +72,9 @@ export default class FeatureList extends Component {
   render() {
     if (!this.state.featureItems || !this.state.featureItems.length) return null;
     return (
-      <section id="features">
+      <section id="features" className="bg-dark-blue">
         {this.renderHeader()}
-        <div className="bg-dark">
+        <div>
           {this.renderFeatureSections()}
         </div>
       </section>

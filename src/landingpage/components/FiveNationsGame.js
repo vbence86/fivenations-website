@@ -1,8 +1,9 @@
 /* globals $, jQuery, window */
 import React, {Component} from 'react';
+import {demoScenario} from './FiveNationsGameScript';
 
 const gameContainerId = 'fivenations-game';
-const s3BundleUrl = 'https://s3.amazonaws.com/fivenations/fivenations.0.30.0.js';
+const s3BundleUrl = 'https://s3.amazonaws.com/fivenations/fivenations.0.34.0.js';
 
 const getScript = src => {
   return new Promise((resolve, reject) => {
@@ -36,43 +37,7 @@ export default class FiveNationsGame extends Component {
     window.FiveNations.Scriptbox
       .getInstance()
       .add('default', game => {
-
-        game.map.new({
-          width: 32,
-          height: 32,
-        });
-
-        game.eventEmitter.synced.players.add({
-          user: true,
-          team: 1,
-          authorised: true,
-        });
-
-        game.eventEmitter.synced.players.add({
-          team: 2,
-        });
-
-        for (var i = 2; i >= 0; i -= 1) {
-          var id = [
-            'hurricane',
-            'orca',
-            'halestrom',
-            'invader',
-            'intruder',
-            'gathering',
-            'crow',
-            'avenger',
-            'devastator',
-            'gloom',
-          ][i % 10];
-          game.eventEmitter.synced.entities.add({
-            id: id,
-            team: Math.random() > 0.5 ? 1 : 2,
-            x: 0 + Math.random() * 600,
-            y: 0 + Math.random() * 600,
-          });
-        }
-
+        demoScenario(game);
       });
 
     $(document.body).addClass('fivenationsLoaded');

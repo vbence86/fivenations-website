@@ -6,7 +6,7 @@ import {trackOpenGame, trackOpenDonation} from './GoogleAnalytics';
 const heroVideo = {
   poster: '/images/first-frame-hero.jpg',
   source: {
-    url: '/media/test.mp4',
+    url: '/media/webpage_low.m4v',
     type: 'video/mp4',
   },
 };

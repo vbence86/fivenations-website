@@ -11,8 +11,8 @@ export default class FeatureList extends Component {
   renderHeader() {
     return (
       <div className="container-fluid bg-dark-blue">
-        <div className="col-sm-12 col-xs-12 col-md-12 headerContainer">
-          <img src="images/fivenations_3game_pic.jpg" />
+        <div className="col-sm-12 col-xs-12 col-md-12 headerContainer">        
+          <img src="images/fivenations_3game_pic.jpg" alt="" />
           <div className="textContainer">
             <h2 className="highlighted viewport-animation animated bounceInLeft">
               <span className="fivenations_3game_backgroundglow sprite" />

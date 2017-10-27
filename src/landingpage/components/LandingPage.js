@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import Universe from './Universe';
+import MetaGroup from './MetaGroup';
 import Header from './Header';
 import ContentMenu from './ContentMenu';
 import AboutUs from './AboutUs';
@@ -14,6 +15,7 @@ export class LandingPage extends Component {
   render() {
     return (
       <Universe id="universe">
+        <MetaGroup contentProvider={ContentProvider} />     
         <GoogleAnalytics contentProvider={ContentProvider} />
         <Header contentProvider={ContentProvider} />
         <ContentMenu contentProvider={ContentProvider} />

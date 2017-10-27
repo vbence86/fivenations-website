@@ -40,7 +40,7 @@ export default class ContactUs extends Component {
               <div className="col-sm-12">
                 {this.renderSocialIcons()}
                 <p className="text-center margin-top-30">
-                 &copy Copyright {year} <a href="#">Webellion Ltd. </a>
+                 © Copyright {year} <a href="#">Webellion Ltd. </a>
                 </p>
               </div>
             </div>

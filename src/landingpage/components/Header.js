@@ -24,6 +24,11 @@ export default class Header extends Component {
       isGameOpen,
     };
 
+    this.state.headerNavigation.unshift({
+      href: '#home',
+      label: 'Home',
+    });
+
     this.onOpenGame = this.onOpenGame.bind(this);
   }
 

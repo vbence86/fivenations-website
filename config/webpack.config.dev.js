@@ -110,6 +110,7 @@ module.exports = {
       {
         exclude: [
           /\.html$/,
+          /\.pug$/,
           // We have to write /\.(js|jsx)(\?.*)?$/ rather than just /\.(js|jsx)$/
           // because you might change the hot reloading server from the custom one
           // to Webpack's built-in webpack-dev-server/client?/, which would not
@@ -157,6 +158,11 @@ module.exports = {
         test: /\.json$/,
         loader: 'json'
       },
+      // pug loader for HTML templates
+      {
+        test: /\.pug$/,
+        loader: 'pug'
+      },      
       // "file" loader for svg
       {
         test: /\.svg$/,
@@ -196,8 +202,7 @@ module.exports = {
     new InterpolateHtmlPlugin(env.raw),
     // Generates an `index.html` file with the <script> injected.
     new HtmlWebpackPlugin({
-      inject: true,
-      template: paths.appHtml,
+      template: paths.appHtml
     }),
     // Makes some environment variables available to the JS code, for example:
     // if (process.env.NODE_ENV === 'development') { ... }. See `./env.js`.

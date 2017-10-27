@@ -8,8 +8,6 @@ var ManifestPlugin = require('webpack-manifest-plugin');
 var paths = require('./paths');
 var getClientEnvironment = require('./env');
 
-
-
 // Webpack uses `publicPath` to determine where the app is being served from.
 // It requires a trailing slash, or the file assets will get an incorrect path.
 var publicPath = paths.servedPath;
@@ -47,24 +45,20 @@ const extractTextPluginOptions = shouldUseRelativeAssetPaths
 module.exports = {
   // Don't attempt to continue if there are any errors.
   bail: true,
-  // We generate sourcemaps in production. This is slow but gives good results.
-  // You can exclude the *.map files from the build during deployment.
-  devtool: 'source-map',
   // In production, we only want to load the polyfills and the app code.
   entry: {
     main: [
       require.resolve('./polyfills'),
-      paths.appIndexJs
+      paths.appServerJs
     ]
   },
   output: {
     // The build folder.
-    path: paths.appBuild,
+    path: '',
     // Generated JS file names (with nested folders).
     // There will be one main bundle, and one file per asynchronous chunk.
     // We don't currently advertise code splitting but Webpack supports it.
-    filename: 'static/js/[name].[chunkhash:8].js',
-    chunkFilename: 'static/js/[name].[chunkhash:8].chunk.js',
+    filename: 'server.js',
     // We inferred the "public path" (such as / or /my-project) from homepage.
     publicPath: publicPath
   },
@@ -215,13 +209,7 @@ module.exports = {
       }
     }),
     // Note: this won't work without ExtractTextPlugin.extract(..) in `loaders`.
-    new ExtractTextPlugin(cssFilename),
-    // Generate a manifest file which contains a mapping of all asset filenames
-    // to their corresponding output file so that tools can pick it up without
-    // having to parse `index.html`.
-    new ManifestPlugin({
-      fileName: 'asset-manifest.json'
-    })
+    new ExtractTextPlugin(cssFilename)
   ],
   // Some libraries import Node modules but don't use them in the browser.
   // Tell Webpack to provide empty mocks for them so importing them works.

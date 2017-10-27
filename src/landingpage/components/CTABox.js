@@ -1,7 +1,14 @@
+/* global $ */
 import React, {Component} from 'react';
-import {trackOpenDonation} from './GoogleAnalytics';
+import {
+  trackOpenDonation, 
+  trackCloseDonation, 
+  trackSubmitDonation,
+} from './GoogleAnalytics';
 
 const donatelyURL = 'https://cdn.donately.com/dntly-core/1.4/core.min.js';
+const donatelyModalId = 'donately-modal';
+const donatelyModalSelector = `#${donatelyModalId}`;
 
 export default class CTABox extends Component {
 
@@ -35,6 +42,8 @@ export default class CTABox extends Component {
     const parent = document.querySelector('#donately-container');
     if (parent) {
       parent.appendChild(this.createDonatelyScript());
+      $(donatelyModalSelector).on('hide.bs.modal', () => trackCloseDonation());
+      $('.donately-submit').click(() => trackSubmitDonation());
     }
   }
 
@@ -52,8 +61,8 @@ export default class CTABox extends Component {
               <span>{this.state.header}</span>
             </h3>
             <h4 className="viewport-animation animated fadeInUp">{this.state.subtitle}</h4>
-            <a onClick={this.onDonate} data-toggle="modal" data-target="#donately-modal" className="fivenations_4supportus_btn_donate_base sprite viewport-animation animated fadeInUp" />
-            <div className="modal fade" id="donately-modal" tabIndex="-1" role="dialog" aria-hidden="true">
+            <a onClick={this.onDonate} data-toggle="modal" data-target={donatelyModalSelector} className="fivenations_4supportus_btn_donate_base sprite viewport-animation animated fadeInUp" />
+            <div className="modal fade" id={donatelyModalId} tabIndex="-1" role="dialog" aria-hidden="true">
               <div className="modal-dialog" role="document">
                 <div className="modal-content">
                   <div className="modal-header">

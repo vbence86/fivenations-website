@@ -29,7 +29,7 @@ export default class MetaGroup extends Component {
         <meta property="og:type" content="website" />
         <meta property="og:title" content={this.state.websiteTitle} />
         <meta property="og:description" content={this.state.websiteDescription} />
-        <meta property="og:image" content={this.state.cardPicture} />        
+        <meta property="og:image" content={`https:${this.state.cardPicture.file.url}`} />        
       </Helmet>      
     );
 

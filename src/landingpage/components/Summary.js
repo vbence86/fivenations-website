@@ -44,7 +44,7 @@ export default class Summary extends Component {
           issues: this.issues,
           stars: this.stars,
           commits: this.commits,
-          donations: this.donations,
+          donations: this.donations + 132,
         });
       }
     });

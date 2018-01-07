@@ -55,28 +55,34 @@ export default class Summary extends Component {
       <section className="container-fluid" id={CONTAINER_ID}>
         <div className="col-sm-12 col-xs-12">
           <div className="col-sm-3 cols-xs-12 figures-block">
-            <p>
-              <span className="fivenations_2developmentbody_icon01 sprite" />
-            </p>
-            <p>
-              <CountUp start={0} end={this.state.issues} duration={3} /> / Open issues
-            </p>
+            <a href="https://github.com/vbence86/fivenations/issues" target="_blank">
+              <p>
+                <span className="fivenations_2developmentbody_icon01 sprite" />
+              </p>
+              <p>
+                <CountUp start={0} end={this.state.issues} duration={3} /> / Open issues
+              </p>
+            </a>
           </div>
           <div className="col-sm-3 cols-xs-12 figures-block">
-            <p>
-              <span className="fivenations_2developmentbody_icon02 sprite" />
-            </p>
-            <p>              
-              <CountUp start={0} end={this.state.stars} duration={3} /> / Stars on Github
-            </p>
+            <a href="https://github.com/vbence86/fivenations/stargazers" target="_blank">
+              <p>
+                <span className="fivenations_2developmentbody_icon02 sprite" />
+              </p>
+              <p>              
+                <CountUp start={0} end={this.state.stars} duration={3} /> / Stars on Github
+              </p>
+            </a>
           </div>
           <div className="col-sm-3 cols-xs-12 figures-block">
-            <p>
-              <span className="fivenations_2developmentbody_icon03 sprite" />
-            </p>
-            <p>
-              <CountUp start={0} end={this.state.commits} duration={3} /> / Commits
-            </p>
+            <a href="https://github.com/vbence86/fivenations/commits/master" target="_blank">
+              <p>
+                <span className="fivenations_2developmentbody_icon03 sprite" />
+              </p>
+              <p>
+                <CountUp start={0} end={this.state.commits} duration={3} /> / Commits
+              </p>
+            </a>
           </div>
           <div data-toggle="modal" data-target="#donately-modal" className="col-sm-3 cols-xs-12 figures-block donately-block">
             <p>

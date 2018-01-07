@@ -39,7 +39,6 @@ export default class InstagramPictures extends Component {
     return this.state.recents.data.map((v, i) => (
       <div className="col-xs-3 col-md-3 pin" key={i}>
         <img onClick={this.imageOnClick.bind(this, i)} alt="instagram" src={v.images.low_resolution.url} width={293} height={293} />
-        {this.renderFooter(v.caption)}
       </div>
     ));
   }

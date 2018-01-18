@@ -28,10 +28,15 @@ function demoScenario(game) {
   });
 
   // Demo map
+  var Starfield = game.map.Starfield;
   game.map.new({
     width: 96,
     height: 96,
-  });
+    starfield: {
+      backgroundTile: 'starfield-1',
+      starfieldGenerator: Starfield.PlanetAreaGenerator
+    }
+  });  
 
   game.map.scrollToTile(35, 35);
 

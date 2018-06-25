@@ -3,7 +3,7 @@ import React, {Component} from 'react';
 import {demoScenario} from './FiveNationsGameScript';
 
 const gameContainerId = 'fivenations-game';
-const s3BundleUrl = 'https://s3.amazonaws.com/fivenations/fivenations.0.55.0.js';
+const s3BundleUrl = 'https://s3.amazonaws.com/fivenations/fivenations.0.61.2.js';
 
 const getScript = src => {
   return new Promise((resolve, reject) => {

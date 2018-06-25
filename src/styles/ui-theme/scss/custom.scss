@@ -872,8 +872,9 @@ a[data-action="play-game"] {
 
   .modal-dialog,
   .modal-content {
-    width: 100%;
+    background-color: black;
     max-width: 1366px;
+    width: 100%;
   }
 
   .modal-dialog { margin: 75px auto; }
